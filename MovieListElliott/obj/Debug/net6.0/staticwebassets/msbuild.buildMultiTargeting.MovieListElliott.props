@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="..\build\MovieListElliott.props" />
+</Project>
