@@ -1,0 +1,82 @@
+﻿@model List<Requestor>
+@{ViewData["Title"] = "MDP Home Page";}
+
+
+<!--
+    Author: Elijah Morishita, Joshua Elliot
+    Date: 6/19/2023
+    MDP Web Application - Home Page
+-->
+
+    <br>
+    <br>
+    <br>
+    <div class="row">
+        <div class="col"><!--col 1-->
+            <a class="btn btn-secondary btn-lg btn-block" href="Requestor/approver.html" role="button">Approver</a>
+            <a class="btn btn-success btn-lg btn-block" href="Requestor/mdp.html" role="button">MDP</a>
+        </div><!--Close col-->
+    </div><!--close row-->
+
+    <br>
+    <div class="row">
+        <div class="col"><!--col 1-->
+            <div class="mb-2">
+            <a asp-controller="Requestor" class="btn btn-primary btn-lg btn-block" asp-action="Add" role="button">Create New Request</a>
+            </div>
+        </div><!--Close col-->
+    </div><!--close row-->
+            
+    <div class="row">
+        <div class="col"><!--col 1-->
+            <table class="table table-bordered table-striped">
+                <thead>
+                    <tr>
+                        <th>Material Number</th>
+                        <th>Description</th>
+                        <th>Plant</th>
+                        <th>Material Type</th>
+                        <th>Program</th>
+                        <th>Scenario</th>
+                        <th>OE/MRO/EPP</th>
+                        <th>CIVL/ITAR</th>
+                        <th>Prod Sloc</th>
+                        <th>Sales Org</th>
+                        <th>Create/Extend</th>
+                        <th>Make/Buy</th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var requestItem in Model)
+                    {
+                        <tr>
+                            <td>@requestItem.MaterialNumber</td>
+                            <td>@requestItem.MaterialDescription</td>
+                            <td>@requestItem.MaterialPlant</td>
+                            <td>@requestItem.MaterialType</td>
+                            <td>@requestItem.ProgramType</td>
+                            <td>@requestItem.Scenario</td>
+                            <td>@requestItem.OE_MRO_radio</td>
+                            <td>@requestItem.CIVL_ITAR_radio</td>
+                            <td>@requestItem.ProdSloc</td>
+                            <td>@requestItem.SalesOrg</td>
+                            <td>@requestItem.Create_Extend_radio</td>
+                            <td>@requestItem.Make_Buy_radio</td>
+                            <td>
+                                <a asp-controller="Requestor" asp-action="Edit" asp-route-id="@requestItem.requestId" asp-route-slug="@requestItem.Slug">Edit</a>
+                                <a asp-controller="Requestor" asp-action="Delete" asp-route-id="@requestItem.requestId" asp-route-slug="@requestItem.Slug">Delete</a>
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div><!--Close col-->
+    </div><!--close row-->
+
+    <br>
+    <br>
+    <br>
+
+
+

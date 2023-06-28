@@ -1,0 +1,54 @@
+﻿/*
+Site Stylesheet
+*/
+
+
+/* adds the required asterisk */
+.requiredLabel:after {
+    content: " *";
+    color: red;
+}
+
+.mainBorder {
+    border-left: dotted;
+    border-right: dotted;
+    border-radius: 10px;
+}
+
+.uppercaseInput {
+    text-transform: uppercase;
+}
+
+.bold {
+    font-weight: bold;
+}
+
+/* Adds stripes to every other table row */
+tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+.form_background {
+    background-color: #f2f2f2;
+}
+
+html {
+    font-size: 14px;
+}
+
+@media (min-width: 768px) {
+    html {
+        font-size: 16px;
+    }
+}
+
+html {
+    position: relative;
+    min-height: 100%;
+}
+
+body {
+    margin-bottom: 60px;
+}
+/*reminder*/
+/* Add Dark Mode Feature */

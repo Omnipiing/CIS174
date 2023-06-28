@@ -1,0 +1,309 @@
+{
+  "Files": [
+    {
+      "Id": "C:\\Users\\jacka\\Documents\\School\\CIS174\\Final\\VS\\MDPwebApp\\Areas\\Admin\\Views\\Requestor\\Edit.cshtml.js",
+      "PackagePath": "staticwebassets\\Areas\\Admin\\Views\\Requestor\\Edit.cshtml.js"
+    },
+    {
+      "Id": "C:\\Users\\jacka\\Documents\\School\\CIS174\\Final\\VS\\MDPwebApp\\Areas\\Approver\\Views\\Requestor\\Edit.cshtml.js",
+      "PackagePath": "staticwebassets\\Areas\\Approver\\Views\\Requestor\\Edit.cshtml.js"
+    },
+    {
+      "Id": "C:\\Users\\jacka\\Documents\\School\\CIS174\\Final\\VS\\MDPwebApp\\Views\\Requestor\\Edit.cshtml.js",
+      "PackagePath": "staticwebassets\\Views\\Requestor\\Edit.cshtml.js"
+    },
+    {
+      "Id": "C:\\Users\\jacka\\Documents\\School\\CIS174\\Final\\VS\\MDPwebApp\\obj\\Debug\\net6.0\\scopedcss\\projectbundle\\MDPwebApp.bundle.scp.css",
+      "PackagePath": "staticwebassets\\MDPwebApp.bundle.scp.css"
+    },
+    {
+      "Id": "C:\\Users\\jacka\\Documents\\School\\CIS174\\Final\\VS\\MDPwebApp\\wwwroot\\css\\site.css",
+      "PackagePath": "staticwebassets\\css\\site.css"
+    },
+    {
+      "Id": "C:\\Users\\jacka\\Documents\\School\\CIS174\\Final\\VS\\MDPwebApp\\wwwroot\\favicon.ico",
+      "PackagePath": "staticwebassets\\favicon.ico"
+    },
+    {
+      "Id": "C:\\Users\\jacka\\Documents\\School\\CIS174\\Final\\VS\\MDPwebApp\\wwwroot\\images\\A320_on_runway_web.jpg",
+      "PackagePath": "staticwebassets\\images\\A320_on_runway_web.jpg"
+    },
+    {
+      "Id": "C:\\Users\\jacka\\Documents\\School\\CIS174\\Final\\VS\\MDPwebApp\\wwwroot\\images\\A320_on_runway_web1650x270.jpg",
+      "PackagePath": "staticwebassets\\images\\A320_on_runway_web1650x270.jpg"
+    },
+    {
+      "Id": "C:\\Users\\jacka\\Documents\\School\\CIS174\\Final\\VS\\MDPwebApp\\wwwroot\\images\\A320_on_runway_web960x157.jpg",
+      "PackagePath": "staticwebassets\\images\\A320_on_runway_web960x157.jpg"
+    },
+    {
+      "Id": "C:\\Users\\jacka\\Documents\\School\\CIS174\\Final\\VS\\MDPwebApp\\wwwroot\\images\\Boeing_737_side_web.jpg",
+      "PackagePath": "staticwebassets\\images\\Boeing_737_side_web.jpg"
+    },
+    {
+      "Id": "C:\\Users\\jacka\\Documents\\School\\CIS174\\Final\\VS\\MDPwebApp\\wwwroot\\images\\Boeing_737_side_web1650x1099.jpg",
+      "PackagePath": "staticwebassets\\images\\Boeing_737_side_web1650x1099.jpg"
+    },
+    {
+      "Id": "C:\\Users\\jacka\\Documents\\School\\CIS174\\Final\\VS\\MDPwebApp\\wwwroot\\images\\Boeing_737_side_web1650x302.jpg",
+      "PackagePath": "staticwebassets\\images\\Boeing_737_side_web1650x302.jpg"
+    },
+    {
+      "Id": "C:\\Users\\jacka\\Documents\\School\\CIS174\\Final\\VS\\MDPwebApp\\wwwroot\\images\\Boeing_737_side_web1650x302_blur.jpg",
+      "PackagePath": "staticwebassets\\images\\Boeing_737_side_web1650x302_blur.jpg"
+    },
+    {
+      "Id": "C:\\Users\\jacka\\Documents\\School\\CIS174\\Final\\VS\\MDPwebApp\\wwwroot\\images\\Boeing_737_side_web960x176.jpg",
+      "PackagePath": "staticwebassets\\images\\Boeing_737_side_web960x176.jpg"
+    },
+    {
+      "Id": "C:\\Users\\jacka\\Documents\\School\\CIS174\\Final\\VS\\MDPwebApp\\wwwroot\\images\\collinslogo.png",
+      "PackagePath": "staticwebassets\\images\\collinslogo.png"
+    },
+    {
+      "Id": "C:\\Users\\jacka\\Documents\\School\\CIS174\\Final\\VS\\MDPwebApp\\wwwroot\\lib\\bootstrap\\LICENSE",
+      "PackagePath": "staticwebassets\\lib\\bootstrap"
+    },
+    {
+      "Id": "C:\\Users\\jacka\\Documents\\School\\CIS174\\Final\\VS\\MDPwebApp\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css"
+    },
+    {
+      "Id": "C:\\Users\\jacka\\Documents\\School\\CIS174\\Final\\VS\\MDPwebApp\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css.map"
+    },
+    {
+      "Id": "C:\\Users\\jacka\\Documents\\School\\CIS174\\Final\\VS\\MDPwebApp\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css"
+    },
+    {
+      "Id": "C:\\Users\\jacka\\Documents\\School\\CIS174\\Final\\VS\\MDPwebApp\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css.map"
+    },
+    {
+      "Id": "C:\\Users\\jacka\\Documents\\School\\CIS174\\Final\\VS\\MDPwebApp\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css"
+    },
+    {
+      "Id": "C:\\Users\\jacka\\Documents\\School\\CIS174\\Final\\VS\\MDPwebApp\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css.map"
+    },
+    {
+      "Id": "C:\\Users\\jacka\\Documents\\School\\CIS174\\Final\\VS\\MDPwebApp\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css"
+    },
+    {
+      "Id": "C:\\Users\\jacka\\Documents\\School\\CIS174\\Final\\VS\\MDPwebApp\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css.map"
+    },
+    {
+      "Id": "C:\\Users\\jacka\\Documents\\School\\CIS174\\Final\\VS\\MDPwebApp\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css"
+    },
+    {
+      "Id": "C:\\Users\\jacka\\Documents\\School\\CIS174\\Final\\VS\\MDPwebApp\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css.map"
+    },
+    {
+      "Id": "C:\\Users\\jacka\\Documents\\School\\CIS174\\Final\\VS\\MDPwebApp\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css"
+    },
+    {
+      "Id": "C:\\Users\\jacka\\Documents\\School\\CIS174\\Final\\VS\\MDPwebApp\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css.map"
+    },
+    {
+      "Id": "C:\\Users\\jacka\\Documents\\School\\CIS174\\Final\\VS\\MDPwebApp\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css"
+    },
+    {
+      "Id": "C:\\Users\\jacka\\Documents\\School\\CIS174\\Final\\VS\\MDPwebApp\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css.map"
+    },
+    {
+      "Id": "C:\\Users\\jacka\\Documents\\School\\CIS174\\Final\\VS\\MDPwebApp\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css"
+    },
+    {
+      "Id": "C:\\Users\\jacka\\Documents\\School\\CIS174\\Final\\VS\\MDPwebApp\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css.map"
+    },
+    {
+      "Id": "C:\\Users\\jacka\\Documents\\School\\CIS174\\Final\\VS\\MDPwebApp\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css"
+    },
+    {
+      "Id": "C:\\Users\\jacka\\Documents\\School\\CIS174\\Final\\VS\\MDPwebApp\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css.map"
+    },
+    {
+      "Id": "C:\\Users\\jacka\\Documents\\School\\CIS174\\Final\\VS\\MDPwebApp\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css"
+    },
+    {
+      "Id": "C:\\Users\\jacka\\Documents\\School\\CIS174\\Final\\VS\\MDPwebApp\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css.map"
+    },
+    {
+      "Id": "C:\\Users\\jacka\\Documents\\School\\CIS174\\Final\\VS\\MDPwebApp\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css"
+    },
+    {
+      "Id": "C:\\Users\\jacka\\Documents\\School\\CIS174\\Final\\VS\\MDPwebApp\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css.map"
+    },
+    {
+      "Id": "C:\\Users\\jacka\\Documents\\School\\CIS174\\Final\\VS\\MDPwebApp\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css"
+    },
+    {
+      "Id": "C:\\Users\\jacka\\Documents\\School\\CIS174\\Final\\VS\\MDPwebApp\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css.map"
+    },
+    {
+      "Id": "C:\\Users\\jacka\\Documents\\School\\CIS174\\Final\\VS\\MDPwebApp\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.css"
+    },
+    {
+      "Id": "C:\\Users\\jacka\\Documents\\School\\CIS174\\Final\\VS\\MDPwebApp\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.css.map"
+    },
+    {
+      "Id": "C:\\Users\\jacka\\Documents\\School\\CIS174\\Final\\VS\\MDPwebApp\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.min.css"
+    },
+    {
+      "Id": "C:\\Users\\jacka\\Documents\\School\\CIS174\\Final\\VS\\MDPwebApp\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.min.css.map"
+    },
+    {
+      "Id": "C:\\Users\\jacka\\Documents\\School\\CIS174\\Final\\VS\\MDPwebApp\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css"
+    },
+    {
+      "Id": "C:\\Users\\jacka\\Documents\\School\\CIS174\\Final\\VS\\MDPwebApp\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css.map"
+    },
+    {
+      "Id": "C:\\Users\\jacka\\Documents\\School\\CIS174\\Final\\VS\\MDPwebApp\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css"
+    },
+    {
+      "Id": "C:\\Users\\jacka\\Documents\\School\\CIS174\\Final\\VS\\MDPwebApp\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css.map"
+    },
+    {
+      "Id": "C:\\Users\\jacka\\Documents\\School\\CIS174\\Final\\VS\\MDPwebApp\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js"
+    },
+    {
+      "Id": "C:\\Users\\jacka\\Documents\\School\\CIS174\\Final\\VS\\MDPwebApp\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js.map"
+    },
+    {
+      "Id": "C:\\Users\\jacka\\Documents\\School\\CIS174\\Final\\VS\\MDPwebApp\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js"
+    },
+    {
+      "Id": "C:\\Users\\jacka\\Documents\\School\\CIS174\\Final\\VS\\MDPwebApp\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js.map"
+    },
+    {
+      "Id": "C:\\Users\\jacka\\Documents\\School\\CIS174\\Final\\VS\\MDPwebApp\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js"
+    },
+    {
+      "Id": "C:\\Users\\jacka\\Documents\\School\\CIS174\\Final\\VS\\MDPwebApp\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js.map"
+    },
+    {
+      "Id": "C:\\Users\\jacka\\Documents\\School\\CIS174\\Final\\VS\\MDPwebApp\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js"
+    },
+    {
+      "Id": "C:\\Users\\jacka\\Documents\\School\\CIS174\\Final\\VS\\MDPwebApp\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js.map"
+    },
+    {
+      "Id": "C:\\Users\\jacka\\Documents\\School\\CIS174\\Final\\VS\\MDPwebApp\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.js"
+    },
+    {
+      "Id": "C:\\Users\\jacka\\Documents\\School\\CIS174\\Final\\VS\\MDPwebApp\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.js.map"
+    },
+    {
+      "Id": "C:\\Users\\jacka\\Documents\\School\\CIS174\\Final\\VS\\MDPwebApp\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.min.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.min.js"
+    },
+    {
+      "Id": "C:\\Users\\jacka\\Documents\\School\\CIS174\\Final\\VS\\MDPwebApp\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.min.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.min.js.map"
+    },
+    {
+      "Id": "C:\\Users\\jacka\\Documents\\School\\CIS174\\Final\\VS\\MDPwebApp\\wwwroot\\lib\\jquery-validation-unobtrusive\\LICENSE.txt",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation-unobtrusive\\LICENSE.txt"
+    },
+    {
+      "Id": "C:\\Users\\jacka\\Documents\\School\\CIS174\\Final\\VS\\MDPwebApp\\wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.js"
+    },
+    {
+      "Id": "C:\\Users\\jacka\\Documents\\School\\CIS174\\Final\\VS\\MDPwebApp\\wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.min.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.min.js"
+    },
+    {
+      "Id": "C:\\Users\\jacka\\Documents\\School\\CIS174\\Final\\VS\\MDPwebApp\\wwwroot\\lib\\jquery-validation\\LICENSE.md",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation\\LICENSE.md"
+    },
+    {
+      "Id": "C:\\Users\\jacka\\Documents\\School\\CIS174\\Final\\VS\\MDPwebApp\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\additional-methods.js"
+    },
+    {
+      "Id": "C:\\Users\\jacka\\Documents\\School\\CIS174\\Final\\VS\\MDPwebApp\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.min.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\additional-methods.min.js"
+    },
+    {
+      "Id": "C:\\Users\\jacka\\Documents\\School\\CIS174\\Final\\VS\\MDPwebApp\\wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\jquery.validate.js"
+    },
+    {
+      "Id": "C:\\Users\\jacka\\Documents\\School\\CIS174\\Final\\VS\\MDPwebApp\\wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.min.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\jquery.validate.min.js"
+    },
+    {
+      "Id": "C:\\Users\\jacka\\Documents\\School\\CIS174\\Final\\VS\\MDPwebApp\\wwwroot\\lib\\jquery\\LICENSE.txt",
+      "PackagePath": "staticwebassets\\lib\\jquery\\LICENSE.txt"
+    },
+    {
+      "Id": "C:\\Users\\jacka\\Documents\\School\\CIS174\\Final\\VS\\MDPwebApp\\wwwroot\\lib\\jquery\\dist\\jquery.js",
+      "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.js"
+    },
+    {
+      "Id": "C:\\Users\\jacka\\Documents\\School\\CIS174\\Final\\VS\\MDPwebApp\\wwwroot\\lib\\jquery\\dist\\jquery.min.js",
+      "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.min.js"
+    },
+    {
+      "Id": "C:\\Users\\jacka\\Documents\\School\\CIS174\\Final\\VS\\MDPwebApp\\wwwroot\\lib\\jquery\\dist\\jquery.min.map",
+      "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.min.map"
+    },
+    {
+      "Id": "obj\\Debug\\net6.0\\staticwebassets\\msbuild.MDPwebApp.Microsoft.AspNetCore.StaticWebAssets.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssets.props"
+    },
+    {
+      "Id": "obj\\Debug\\net6.0\\staticwebassets\\msbuild.build.MDPwebApp.props",
+      "PackagePath": "build\\MDPwebApp.props"
+    },
+    {
+      "Id": "obj\\Debug\\net6.0\\staticwebassets\\msbuild.buildMultiTargeting.MDPwebApp.props",
+      "PackagePath": "buildMultiTargeting\\MDPwebApp.props"
+    },
+    {
+      "Id": "obj\\Debug\\net6.0\\staticwebassets\\msbuild.buildTransitive.MDPwebApp.props",
+      "PackagePath": "buildTransitive\\MDPwebApp.props"
+    }
+  ],
+  "ElementsToRemove": []
+}

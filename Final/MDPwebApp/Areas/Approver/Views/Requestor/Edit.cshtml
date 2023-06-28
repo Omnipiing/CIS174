@@ -1,0 +1,339 @@
+﻿@model Requestor
+@{
+    string title = ViewBag.Action + " Request";
+    ViewData["Title"] = title;
+}
+
+<h2>@ViewBag.Title</h2>
+<form asp-action="Edit" method="post">
+    <div asp-validation-summary="All" class="text-danger"></div>
+
+    <div class="row">
+        <div class="col"> <!--col 1-->
+            <div class="btn-group" role="group" aria-label="OE_MRO_radio checkbox toggle button group">
+                <input type="radio" value="OE" class="btn-check" asp-for="OE_MRO_radio" id="option_OE_id" autocomplete="off" onchange="OE_button_selected()" checked>
+                <label class="btn btn-outline-secondary btn-sm" for="option_OE_id" asp-for="OE_MRO_radio">OE</label>
+                <input type="radio" value="MRO" class="btn-check" asp-for="OE_MRO_radio" id="option_MRO_id" autocomplete="off" onchange="MRO_button_selected()">
+                <label class="btn btn-outline-secondary btn-sm" for="option_MRO_id" asp-for="OE_MRO_radio">MRO</label>
+                <input type="radio" value="EPP" class="btn-check" asp-for="OE_MRO_radio" id="option_EPP_id" autocomplete="off" onchange="EPP_button_selected()">
+                <label class="btn btn-outline-secondary btn-sm" for="option_EPP_id" asp-for="OE_MRO_radio" data-bs-toggle="tooltip" data-bs-delay="500" title="Jacksonville">EPP</label>
+            </div>  
+        </div><!--Close col-->
+        <div class="col"><!--col 2-->
+            <div class="btn-group" role="group" aria-label="CIVL_ITAR checkbox toggle button group">
+                <input type="radio" value="CIVL01" class="btn-check" asp-for="CIVL_ITAR_radio" id="civil_one_radio_id" autocomplete="off" checked>
+                <label class="btn btn-outline-secondary btn-sm" for="civil_one_radio_id" asp-for="CIVL_ITAR_radio" data-bs-toggle="tooltip" data-bs-delay="500" title="Unavailable for EPP option">CIVL 01</label>
+                <input type="radio" value="ITAR" class="btn-check" asp-for="CIVL_ITAR_radio" id="Military_three_radio_id" autocomplete="off">
+                <label class="btn btn-outline-danger btn-sm" for="Military_three_radio_id" asp-for="CIVL_ITAR_radio">ITAR 03</label>
+                <input type="radio" value="CIVL04" class="btn-check" asp-for="CIVL_ITAR_radio" id="civil_four_radio_id" autocomplete="off" disabled>
+                <label class="btn btn-outline-secondary btn-sm" for="civil_four_radio_id" asp-for="CIVL_ITAR_radio" data-bs-toggle="tooltip" data-bs-delay="500" title="EPP option only">CIVL 04</label>
+            </div>
+        </div><!--Close col-->
+        <div class="col"><!--col 3-->
+            <div class="form-check">
+                <input class="form-check-input" value=true asp-for="AOG" type="checkbox" id="aog_id">
+                <label class="form-check-label" asp-for="AOG" id="aog_label_id" for="aog_id">AOG</label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" value=true asp-for="PrimarySBU" type="checkbox" id="primary_sbu_id" checked>
+                <label class="form-check-label" asp-for="PrimarySBU" id="primary_sbu_id_label" for="primary_sbu_id">Primary SBU</label>
+            </div>
+        </div><!--Close col-->
+        <div class="col"><!--col 4-->
+            <div class="form-check">
+                <input class="form-check-input" value=true asp-for="LeadTime" type="checkbox" id="leadTime_checkbox_id">
+                <label class="form-check-label" asp-for="LeadTime" id="leadTime_label_id" for="leadTime_checkbox_id">Lead Time Scheduled</label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" value=true type="checkbox" asp-for="STO" id="sto_id">
+                <label class="form-check-label" asp-for="STO" id="sto_label_id" for="sto_id" data-bs-toggle="tooltip" data-bs-placement="left" data-bs-delay="500" title="Stock Transfer Order">STO</label>
+            </div>
+        </div><!--Close col-->
+        <div class="col"><!--col 5-->
+            <div class="form-check">
+                <input class="form-check-input" type="radio" value="Create" asp-for="Create_Extend_radio"  id="create_id" checked onchange="createExtendFields()">
+                <label class="form-check-label" asp-for="Create_Extend_radio" for="create_id">Create</label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="radio" value="Extend" asp-for="Create_Extend_radio" id="extend_id" onchange="createExtendFields()">
+                <label class="form-check-label" asp-for="Create_Extend_radio" for="extend_id">Extend</label>
+            </div>
+        </div><!--Close col-->
+        <div class="col"><!--col 6-->
+            <div class="form-check">
+                <input class="form-check-input" type="radio" value="Make" asp-for="Make_Buy_radio" id="make_id" checked onchange="makeBuyFields()">
+                <label class="form-check-label" asp-for="Make_Buy_radio" for="make_id">Make</label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="radio" value="Buy" asp-for="Make_Buy_radio" id="buy_id" onchange="makeBuyFields()">
+                <label class="form-check-label" asp-for="Make_Buy_radio" for="buy_id">Buy</label>
+            </div>
+        </div><!--Close col-->
+    </div><!--Close row-->
+
+    <div class="form-group row">
+        <div class="col-md-6"><!--col 1-->
+            <label for="materialNumber_id" class="col-form-label requiredLabel" asp-for="MaterialNumber" style="text-align: left;" data-bs-toggle="tooltip" data-bs-placement="left" data-bs-delay="500"
+                   title="Mfr Part Number/ASG part number - no spaces - No vendor part numbers in OE plants - G/S required">Material Number</label>
+            <input type="text" oninput="this.value = this.value.toUpperCase()" asp-for="MaterialNumber" class="form-control required" id="materialNumber_id" placeholder="Material Number (PN)" maxlength="20" aria-describedby="material Number textbox" required autofocus>
+            <small id="matNumHelp_id_small" class="form-text text-muted">20x Character max</small>
+        </div><!--close col-->
+        <div class="col-md-6"><!--col 2-->
+            <label for="materialDescription_id" class="col-form-label requiredLabel" asp-for="MaterialDescription" style="text-align: left;" data-bs-toggle="tooltip" data-bs-placement="right" data-bs-delay="500"
+                   title="Material Description: Will auto-update to ALL CAPS - NO ASTERICKS">Material Description</label>
+            <input type="text" oninput="this.value = this.value.toUpperCase()" asp-for="MaterialDescription" class="form-control required" id="materialDescription_id" placeholder="Material Description (auto caps)" maxlength="40" aria-describedby="material description textbox" required>
+            <small id="matDescHelp_id_small" class="form-text text-muted">40x Character max (must match TeamCenter if applicable)</small>
+        </div><!--close col-->
+    </div><!--close row-->
+
+    <div class="form-group row"><!--row-->
+        <div class="col"><!--col 1-->
+            <label for="materialPlant_id" class="col-form-label requiredLabel" asp-for="MaterialPlant" style=" text-align: left;">Plant</label>
+            <select class="form-select form-select-sm required" asp-for="MaterialPlant" id="materialPlant_id" aria-label="Plant menu selection" style="width:100%;" required>
+                <option selected disabled></option>
+                <option value="2000">2000 - GA Chula Vista</option>
+                <option value="2001">2001 - Goodrich Aerospace Europe SAS</option>
+                <option value="2002">2002 - Goodrich Aerospace Europe GmbH</option>
+                <option value="2005">2005 - Aero Tech - Tianjin Podding</option>
+                <option value="2006">2006 - Goodrich Aerospace Canada Ltd</option>
+                <option value="2010">2010 - GA Riverside</option>
+                <option value="2020">2020 - GA Foley</option>
+                <option value="2030">2030 - GA San Marcos</option>
+                <option value="2040">2040 - GA Mexicali (Lux Mex)</option>
+                <option value="2041">2041 - GA Mexicali MFG. (GAM)</option>
+                <option value="2045">2045 - Goodrich  Aero Tech - Tianjin OE</option>
+                <option value="2610">2610 - GA Everett</option>
+                <option value="2196">2196 - Engineered Polymer Products, Goodrich</option>
+            </select>
+        </div><!--close col 1-->
+        <div class="col-sm"><!--col 2-->
+            <label for="productionSloc_id" class="col-form-label requiredLabel" asp-for="ProdSloc" style="text-align: left;">Production Storage Location</label>
+            <input type="text" oninput="this.value = this.value.toUpperCase()" class="form-control required" id="productionSloc_id" asp-for="ProdSloc" placeholder="Sloc" maxlength="4" aria-describedby="prodSloc" required>
+            <small id="prodSloc" class="form-text text-muted">4x Character max</small>
+        </div><!--close col 2-->
+        <div class="col"><!--col 3-->
+            <label for="salesOrg_id" class="col-form-label requiredLabel" asp-for="SalesOrg" style="text-align: left;">Sales Organization</label>
+            <select class="form-select form-select-sm required" id="salesOrg_id" asp-for="SalesOrg" aria-label="Sales org menu selection" style="width:100%;" required>
+                <option selected disabled></option>
+                <option value="4000">4000 - Rohr Inc. (CV)</option>
+                <option value="4005">4005 - ASG-Everett</option>
+                <option value="4010">4010 - Toulouse-Production</option>
+                <option value="4025">4025 - ASG Canada</option>
+                <option value="4030">4030 - Hamburg</option>
+                <option value="4045">4045 - OE-Tianjin </option>
+                <option value="4070">4070 - GR XCH Luxembourg (Mexicali P 2040)</option>
+                <option value="4092">4092 - ASG Singapore</option>
+            </select>
+        </div><!--close col 3-->
+    </div><!--close row-->
+
+    <div class="form-group row"><!--row-->
+        <div class="col"><!--col 1-->
+            <label for="materialType_id" class="col-form-label requiredLabel" asp-for="MaterialType" style="text-align: left;">Material Type</label>
+            <select class="form-select form-select-sm required" id="materialType_id" asp-for="MaterialType" aria-label="Material type menu selection" style="width:100%;" required>
+                <option selected disabled></option>
+                <option value="Z001">Z001 End Item (MTO)</option>
+                <option value="Z002">Z002 Assembly (GPD/MTS)</option>
+                <option value="Z003">Z003 Bonded Assy (GPD/MTS)</option>
+                <option value="Z004">Z004 Detail (MTS)</option>
+                <option value="Z005">Z005 Raw Material</option>
+                <option value="Z007">Z007 </option>
+                <option value="Z012">Z012 Non-Prod-Non-Valuated (4x4 Chm)</option>
+                <option value="Z016">Z016 Customer Furnished</option>
+                <option value="Z019">Z019 Hardware</option>
+                <option value="Z020">Z020 Chemicals (3x5)</option>
+                <option value="Z021">Z021 Pachaging Mat'l</option>
+            </select>
+        </div><!--close col-->
+        <div class="col"><!--col 2-->
+            <label for="ProgramType_id" class="col-form-label requiredLabel" asp-for="ProgramType" style="text-align: left;">Program</label>
+            <select class="form-select form-select-sm required" id="ProgramType_id" asp-for="ProgramType" aria-label="Program menu selection" style="width:100%;" required>
+                <option selected disabled></option>
+                <option value="737">737</option>
+                <option value="767">767 (CF6-80C2)</option>
+                <option value="787">787</option>
+                <option value="A320NEO">A320NEO</option>
+                <option value="A350">A350</option>
+                <option value="C-Series">C-Series</option>
+                <option value="CF34-10">CF34-10</option>
+                <option value="CF6-80E1">CF6-80E1</option>
+                <option value="CFM56-5">CFM56-5 A/B</option>
+                <option value="Dassault">Dassault</option>
+                <option value="E175-E2">E175-E2</option>
+                <option value="E190-E2">E190-E2</option>
+                <option value="E195-E2">E195-E2</option>
+                <option value="Embraer Tail Cone">Embraer Tail Cone</option>
+                <option value="Gridlock">Gridlock</option>
+                <option value="K1F">K1F</option>
+                <option value="KC-390">KC-390</option>
+                <option value="MRJ">MRJ</option>
+                <option value="Sorella">Sorella</option>
+                <option value="Trent 700">Trent 700 (RB211-TRENT)</option>
+                <option value="Trent 900">Trent 900</option>
+                <option value="V2500">V2500</option>
+                <option value="C-5">C-5 (out of production)</option>
+            </select>
+        </div><!--close col-->
+        <div class="col"><!--col 3-->
+            <label for="scenarioType_id" class="col-form-label requiredLabel" asp-for="Scenario" style="text-align: left;">Scenario</label>
+            <select class="form-select form-select-sm required" id="scenarioType_id" asp-for="Scenario" aria-label="Scenario menu selection" style="width:100%;" required>
+                <option selected disabled></option>
+                <option value="MTO End Item - Non Master Scheduled ">MTO End Item - Non Master Scheduled </option>
+                <option value="MTO End Item - Master Scheduled">MTO End Item - Master Scheduled</option>
+                <option value="MTO End Item - Master Scheduled Kits">MTO End Item - Master Scheduled Kits</option>
+                <option value="MTO End Item - Non Master Scheduled Kits">MTO End Item - Non Master Scheduled Kits</option>
+                <option value="MTO End Item - Master Scheduled Nacelle">MTO End Item - Master Scheduled Nacelle</option>
+                <option value="MTO End Item - Nacelle BOM - Service - Non Master Scheduled">MTO End Item - Nacelle BOM - Service - Non Master Scheduled</option>
+                <option value="MTO End Item - Majors Collector Kit - Non Master Scheduled">MTO End Item - Majors Collector Kit - Non Master Scheduled</option>
+                <option value="GPD Separable Assembly - Make">GPD Separable Assembly - Make</option>
+                <option value="GPD Separable Assembly - Make - RMN Kits">GPD Separable Assembly - Make - RMN Kits</option>
+                <option value="GPD Separable Assembly - Make Kits">GPD Separable Assembly - Make Kits</option>
+                <option value="GPD Inseparable Assembly - Make">GPD Inseparable Assembly - Make</option>
+                <option value="MTS Assembly - Purchased">MTS Assembly - Purchased</option>
+                <option value="MTS Assembly - Purchased RMN Kit">MTS Assembly - Purchased RMN Kit</option>
+                <option value="MTS Assembly -  Purchased - Subcontracted">MTS Assembly -  Purchased - Subcontracted</option>
+                <option value="MTS Detail - Purchased">MTS Detail - Purchased</option>
+                <option value="MTS Detail - Class 14 GS (685-* or 285-*)">MTS Detail - Class 14 GS (685-* or 285-*)</option>
+                <option value="MTS Detail - Class 12 or 14 GS (Equipment)">MTS Detail - Class 12 or 14 GS (Equipment)</option>
+                <option value="Class 6/10 2BIN Kits">Class 6/10 2BIN Kits</option>
+                <option value="MTS Detail - Purchased Customer Return Rework">MTS Detail - Purchased Customer Return Rework</option>
+                <option value="MTS Detail - Make - Without Supplier First Cut">MTS Detail - Make - Without Supplier First Cut</option>
+                <option value="MTS Detail - Make - Nested">MTS Detail - Make - Nested</option>
+                <option value="MTS Detail - Make - With Supplier First Cut">MTS Detail - Make - With Supplier First Cut</option>
+                <option value="Raw Material">Raw Material</option>
+                <option value="Service Part">Service Part</option>
+                <option value="Customer Furnished">Customer Furnished</option>
+                <option value="Non Product, Non Valuated">Non Product, Non Valuated</option>
+                <option value="Packaging Materials">Packaging Materials</option>
+                <option value="Test Panel / Coupon">Test Panel / Coupon</option>
+            </select>
+        </div><!--close col-->
+    </div><!--close row-->
+
+    <div class="form-group row"><!--row-->
+        <div class="col-md"><!--col-->
+            <label for="component_id" class="col-form-label requiredLabel" asp-for="Component" style="text-align: left;">Component</label>
+            <select class="form-select form-select-sm required" id="component_id" asp-for="Component" aria-label="Component menu selection" style="width:100%;" required>
+                <option selected disabled></option>
+                <option value="Core Cowl">Core Cowl</option>
+                <option value="EBU">EBU</option>
+                <option value="Engine Mounts">Engine Mounts</option>
+                <option value="Exhaust">Exhaust</option>
+                <option value="Fan Case">Fan Case</option>
+                <option value="Fan Cowl">Fan Cowl</option>
+                <option value="Inlet">Inlet</option>
+                <option value="Pylon">Pylon</option>
+                <option value="Thrust Reverser">Thrust Reverser</option>
+                <option value="Torque Box">Torque Box</option>
+            </select>
+        </div><!--close col-->
+        <div class="col-md"><!--col-->
+            <label for="raw_mat_id" class="col-form-label" asp-for="RawMaterial" style="text-align: left;" title="Raw Material Spec">Raw Material Spec</label>
+            <input type="text" class="form-control" id="raw_mat_id" asp-for="RawMaterial" placeholder="Raw Mat" maxlength="15" aria-describedby="Raw Material Specification">
+            <small id="raw_mat_id_small" class="form-text text-muted">15x Character max</small>
+        </div><!--close col-->
+        <div class="col-md"><!--col-->
+            <label for="authority_id" class="col-form-label" asp-for="Authority" style="text-align: left;" title="Authority (i.e. ECA / MCA)">Authority (i.e. ECA / MCA)</label>
+            <input type="text" class="form-control" id="authority_id" asp-for="Authority" placeholder="Authority" maxlength="15" aria-describedby="Authority (i.e. ECA / MCA)">
+            <small id="authority_id_small" class="form-text text-muted">15x Character max</small>
+        </div><!--close col-->
+        <div class="col-md"><!--col-->
+            <label for="next_higher_assm_id" class="col-form-label" asp-for="NextHigherAssembly" style="text-align: left;" title="Next Higher Assembly">Next Higher Assembly</label>
+            <input type="text" class="form-control" id="next_higher_assm_id" asp-for="NextHigherAssembly" placeholder="Next Higher Assm" maxlength="15" aria-describedby="Next Higher Assembly">
+            <small id="next_higher_assm_id_small" class="form-text text-muted">15x Character max</small>
+        </div><!--close col-->
+    </div><!--close row-->
+
+    <div class="form-group row"> <!--row-->
+        <div class="col-md-6"><!--col 1-->
+            <label for="old_pn_id" class="col-form-label" style="text-align: left;" asp-for="OldPartNumber" data-bs-toggle="tooltip" data-bs-placement="left" data-bs-delay="500"
+                   title="Old/Similar PN - For reference only, do NOT expect MDP to compare this info.  Max character in SAP is 18x, if you need more just add it to the comment box">Old/Similar Material Number</label>
+            <input type="text" oninput="this.value = this.value.toUpperCase()" class="form-control" id="old_pn_id" asp-for="OldPartNumber" placeholder="AKA Previous PN" maxlength="18" aria-describedby="Old Similar Material Number">
+            <small id="old_id_small" class="form-text text-muted">18x Character max</small>
+        </div><!--close col-->
+        <div class="col-md-2"><!--col 2-->
+            <label for="prod_sup_id" class="col-form-label" style="text-align: left;" asp-for="ProdSupervisor" title="Production Supervisor">Production Supervisor</label>
+            <input type="text" oninput="this.value = this.value.toUpperCase()" class="form-control" id="prod_sup_id" asp-for="ProdSupervisor" placeholder="Prod Sup" maxlength="3" aria-describedby="Production Supervisor">
+            <small id="Prod_sup_id_small" class="form-text text-muted">3x Character max</small>
+        </div><!--close col-->
+        <div class="col-md-2"><!--col 3-->
+            <label for="mrp_cntrl_id" class="col-form-label" style="text-align: left;" asp-for="MRPController" title="MRP Controller (planner)">MRP Controller</label>
+            <input type="text" oninput="this.value = this.value.toUpperCase()" class="form-control" id="mrp_cntrl_id" asp-for="MRPController" placeholder="MRP" maxlength="3" aria-describedby="MRP Controller">
+            <small id="mrp_cntrl_id_small" class="form-text text-muted">3x Character max</small>
+        </div><!--close col-->
+        <div class="col-md-2"><!--col 4-->
+            <label for="sloc_ep_id" class="col-form-label" style="text-align: left;" asp-for="EPSloc" data-bs-toggle="tooltip" data-bs-placement="right" data-bs-delay="500"
+                   title="SAP Definition: Default storage location for external procurement Key of the storage location that is proposed in the purchase requisition in materials planning for subsequent storage of the material. In the case of a material procured externally, this storage location is proposed in the planned order in materials planning.">EP Storage Location</label>
+            <input type="text" oninput="this.value = this.value.toUpperCase()" class="form-control" id="sloc_ep_id" asp-for="EPSloc" placeholder="Sloc" maxlength="4" aria-describedby="epSloc">
+            <small id="epSloc" class="form-text text-muted">4x Character max</small>
+        </div><!--close col-->
+    </div><!--close row-->
+
+    <div class="form-group row"><!--row-->
+        <div class="col-2"><!--col 1-->
+            <div class="form-check">
+                <input class="form-check-input" asp-for="AdditionalCheckBox" type="checkbox" value=true id="additional_id" onchange="additionalCheckBox()">
+                <label class="form-check-label" asp-for="AdditionalCheckBox" for="additional_id" id="additional_id_label">Add sloc</label>
+                <small id="additional_id_small" class="form-text text-muted">(check to add a 2nd sloc)</small>
+            </div>
+        </div><!--Close col-->
+        <div class="col-4"><!--col 2-->
+            <label for="materialPlantExtend_id" class="col-form-label" asp-for="AdditionalPlant" style="text-align: left;" id="materialPlantExtendLabel">Additional Plant</label>
+            <select class="form-select form-select-sm" id="materialPlantExtend_id" asp-for="AdditionalPlant" aria-label="Plant menu selection Extension" style="width:100%;" disabled>
+                <option id="BlankPlantExtendOption" selected disabled></option>
+                <option value="2000">2000 - GA Chula Vista</option>
+                <option value="2001">2001 - Goodrich Aerospace Europe SAS</option>
+                <option value="2002">2002 - Goodrich Aerospace Europe GmbH</option>
+                <option value="2005">2005 - Aero Tech - Tianjin Podding</option>
+                <option value="2006">2006 - Goodrich Aerospace Canada Ltd</option>
+                <option value="2010">2010 - GA Riverside</option>
+                <option value="2020">2020 - GA Foley</option>
+                <option value="2030">2030 - GA San Marcos</option>
+                <option value="2040">2040 - GA Mexicali (Lux Mex)</option>
+                <option value="2041">2041 - GA Mexicali MFG. (GAM)</option>
+                <option value="2045">2045 - Goodrich  Aero Tech - Tianjin OE</option>
+                <option value="2610">2610 - GA Everett</option>
+                <option value="2196">2196 - Engineered Polymer Products, Goodrich</option>
+            </select>
+        </div><!--close col-->
+        <div class="col-md-2"><!--col 3-->
+            <label for="productionSlocExtend_id" class="col-form-label" style="text-align: left;" asp-for="AdditionalSloc" id="productionSlocExtendLabel_id">Additional Sloc</label>
+            <input type="text" oninput="this.value = this.value.toUpperCase()" class="form-control" id="productionSlocExtend_id" asp-for="AdditionalSloc" placeholder="Sloc" maxlength="4" aria-describedby="production storage location extension" disabled>
+            <small id="prodSlocExtend" class="form-text text-muted">4x Character max</small>
+        </div><!--close col-->
+        <div class="col-4"><!--col 4-->
+            <label for="salesOrgExtend_id" class="col-form-label" asp-for="AdditionalSalesOrg" style="text-align: left;" id="salesOrgExtendLabel_id">Additional Sales Organization</label>
+            <select class="form-select form-select-sm" id="salesOrgExtend_id" asp-for="AdditionalSalesOrg" aria-label="Sales org menu selection extension" style="width:100%;" disabled>
+                <option id="blankSalesOrgExtendOption" selected disabled></option>
+                <option value="4000">4000 - Rohr Inc. (CV)</option>
+                <option value="4005">4005 - ASG-Everett</option>
+                <option value="4010">4010 - Toulouse-Production</option>
+                <option value="4025">4025 - ASG Canada</option>
+                <option value="4030">4030 - Hamburg</option>
+                <option value="4045">4045 - OE-Tianjin </option>
+                <option value="4070">4070 - GR XCH Luxembourg (Mexicali P 2040)</option>
+                <option value="4092">4092 - ASG Singapore</option>
+            </select>
+        </div><!--close col-->
+    </div><!--close row-->
+
+    <div class="form-group row"> <!--row-->
+        <div class="col"><!--col 1-->
+            <span class="requiredLabel"></span>
+            <textarea id="commentBox_id" class="form-control required" asp-for="Comment" maxlength="350"
+                      placeholder="Enter additional comments here. Please include your name if different from your computer logon, and the EAC if available" required></textarea>
+        </div><!--close col-->
+    </div><!--close row-->
+    
+    <input type="hidden" asp-for="requestId" />
+
+    <br>
+    <button type="submit" class="btn btn-primary">Save</button>
+    <a asp-controller="Home" asp-action="Index" class="btn btn-primary">Cancel</a>
+
+</form>
+
+<!--JS Script Link-->
+@*@section scripts{
+    <script src="~/Views/Requestor/Edit.cshtml.js"></script>
+}*@

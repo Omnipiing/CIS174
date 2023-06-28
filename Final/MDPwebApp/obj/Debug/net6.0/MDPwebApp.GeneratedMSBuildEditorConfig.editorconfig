@@ -1,0 +1,109 @@
+is_global = true
+build_property.TargetFramework = net6.0
+build_property.TargetPlatformMinVersion = 
+build_property.UsingMicrosoftNETSdkWeb = true
+build_property.ProjectTypeGuids = 
+build_property.InvariantGlobalization = 
+build_property.PlatformNeutralAssembly = 
+build_property.EnforceExtendedAnalyzerRules = 
+build_property._SupportedPlatformList = Linux,macOS,Windows
+build_property.RootNamespace = MDPwebApp
+build_property.RootNamespace = MDPwebApp
+build_property.ProjectDir = C:\Users\jacka\Documents\School\CIS174\Code\VS\Final\MDPwebApp\
+build_property.RazorLangVersion = 6.0
+build_property.SupportLocalizedComponentNames = 
+build_property.GenerateRazorMetadataSourceChecksumAttributes = 
+build_property.MSBuildProjectDirectory = C:\Users\jacka\Documents\School\CIS174\Code\VS\Final\MDPwebApp
+build_property._RazorSourceGeneratorDebug = 
+
+[C:/Users/jacka/Documents/School/CIS174/Code/VS/Final/MDPwebApp/Areas/Admin/Views/Home/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/jacka/Documents/School/CIS174/Code/VS/Final/MDPwebApp/Areas/Admin/Views/Requestor/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcUmVxdWVzdG9yXERlbGV0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/jacka/Documents/School/CIS174/Code/VS/Final/MDPwebApp/Areas/Admin/Views/Requestor/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcUmVxdWVzdG9yXEVkaXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/jacka/Documents/School/CIS174/Code/VS/Final/MDPwebApp/Areas/Admin/Views/Requestor/requestor.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcUmVxdWVzdG9yXHJlcXVlc3Rvci5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/jacka/Documents/School/CIS174/Code/VS/Final/MDPwebApp/Areas/Admin/Views/_ViewImports.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/jacka/Documents/School/CIS174/Code/VS/Final/MDPwebApp/Areas/Admin/Views/_ViewStart.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/jacka/Documents/School/CIS174/Code/VS/Final/MDPwebApp/Areas/Approver/Views/Home/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQXBwcm92ZXJcVmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/jacka/Documents/School/CIS174/Code/VS/Final/MDPwebApp/Areas/Approver/Views/Requestor/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQXBwcm92ZXJcVmlld3NcUmVxdWVzdG9yXERlbGV0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/jacka/Documents/School/CIS174/Code/VS/Final/MDPwebApp/Areas/Approver/Views/Requestor/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQXBwcm92ZXJcVmlld3NcUmVxdWVzdG9yXEVkaXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/jacka/Documents/School/CIS174/Code/VS/Final/MDPwebApp/Areas/Approver/Views/Requestor/requestor.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQXBwcm92ZXJcVmlld3NcUmVxdWVzdG9yXHJlcXVlc3Rvci5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/jacka/Documents/School/CIS174/Code/VS/Final/MDPwebApp/Areas/Approver/Views/_ViewImports.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQXBwcm92ZXJcVmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/jacka/Documents/School/CIS174/Code/VS/Final/MDPwebApp/Areas/Approver/Views/_ViewStart.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQXBwcm92ZXJcVmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/jacka/Documents/School/CIS174/Code/VS/Final/MDPwebApp/Views/Home/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/jacka/Documents/School/CIS174/Code/VS/Final/MDPwebApp/Views/Home/Privacy.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQcml2YWN5LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/jacka/Documents/School/CIS174/Code/VS/Final/MDPwebApp/Views/Home/TermsOfService.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxUZXJtc09mU2VydmljZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/jacka/Documents/School/CIS174/Code/VS/Final/MDPwebApp/Views/Requestor/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUmVxdWVzdG9yXERlbGV0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/jacka/Documents/School/CIS174/Code/VS/Final/MDPwebApp/Views/Requestor/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUmVxdWVzdG9yXEVkaXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/jacka/Documents/School/CIS174/Code/VS/Final/MDPwebApp/Views/Requestor/requestor.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUmVxdWVzdG9yXHJlcXVlc3Rvci5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/jacka/Documents/School/CIS174/Code/VS/Final/MDPwebApp/Views/_ViewImports.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/jacka/Documents/School/CIS174/Code/VS/Final/MDPwebApp/Views/_ViewStart.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/jacka/Documents/School/CIS174/Code/VS/Final/MDPwebApp/Areas/Admin/Views/Shared/_AdminLayout.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcU2hhcmVkXF9BZG1pbkxheW91dC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = b-07s4qnskl2
+
+[C:/Users/jacka/Documents/School/CIS174/Code/VS/Final/MDPwebApp/Areas/Approver/Views/Shared/_ApproverLayout.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQXBwcm92ZXJcVmlld3NcU2hhcmVkXF9BcHByb3ZlckxheW91dC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = b-s3ijogwecz
+
+[C:/Users/jacka/Documents/School/CIS174/Code/VS/Final/MDPwebApp/Views/Shared/_Layout.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = b-57t60o07o2

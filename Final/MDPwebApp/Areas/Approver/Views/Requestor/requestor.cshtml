@@ -1,0 +1,505 @@
+﻿@model Requestor
+@{
+    string title = ViewBag.Action + " Request";
+    ViewData["Title"] = title;
+}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>MDP - Requestor</title>
+    <!--
+        Author: Elijah Morishita
+        Date: 6/19/2023
+        MDP Web Application - Requestor
+    -->
+
+
+    <meta charset="UTF-8">
+    <meta name="description" content="MDP web application requestor page">
+    <meta name="keywords" content="MDP, SAP, Requestor">
+    <meta name="author" content="Elijah Morishita">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!--Bootstrap links ============================================-->
+    <!--Bootstrap and Popper Bundle-->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <!--Bootstrap CSS, must come before all other stylesheets-->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <!--Bootstrap links ============================================-->
+    <!--external style sheet-->
+    <link rel="stylesheet" href="../css/stylesheet.css">
+    <!--external Javascript-->
+    <script type="text/javascript" src="js/requestor.js"></script>
+
+</head>
+
+<body>
+    <header>
+        <div class="container">
+            <div class="row">
+                <div class="col">
+                    <img src="../images/A320_on_runway_web1650x270.jpg" alt="A320 on a runway" class="img-fluid" style="border: transparent; border-radius: 10px;">
+                </div><!--Close col-->
+            </div><!--close row-->
+        </div><!--/container-->
+    </header>
+    <main>
+        <div class="container mainBorder">
+
+            <br>
+            <div class="row">
+                <div class="col">
+                    <!--col 1-->
+
+                </div><!--Close col-->
+                <div class="col">
+                    <!--col 2-->
+                    <h2 style="text-align: center;">Initial Request Form</h2>
+                </div><!--Close col-->
+                <div class="col">
+                    <!--col 3-->
+                    <a href="" style="float: right;">Log out</a>
+                </div><!--Close col-->
+            </div><!--close row-->
+            <br>
+
+            <!--Request Form-->
+            <form id="validate_request" asp-action="Edit" onsubmit="return false;" class="form_background" method="post">
+            <!--The onsubmit="return false;" makes it so nothing changes on the form when the cancel option is selected (after clicking on the submit button)-->
+                <div class="row">
+                    <div class="col">
+                        <!--col 1-->
+                        <div class="btn-group" role="group" aria-label="OE_MRO_radio checkbox toggle button group">
+                            <input type="radio" name="OE_MRO_EPP" class="btn-check" id="option_OE_id" autocomplete="off" onchange="OE_button_selected()" checked>
+                            <label class="btn btn-outline-secondary btn-sm" for="option_OE_id">OE</label>
+                            <input type="radio" name="OE_MRO_EPP" class="btn-check" id="option_MRO_id" autocomplete="off" onchange="MRO_button_selected()">
+                            <label class="btn btn-outline-secondary btn-sm" for="option_MRO_id">MRO</label>
+                            <input type="radio" name="OE_MRO_EPP" class="btn-check" id="option_EPP_id" autocomplete="off" onchange="EPP_button_selected()">
+                            <label class="btn btn-outline-secondary btn-sm" for="option_EPP_id" data-bs-toggle="tooltip" data-bs-delay="500" title="Jacksonville">EPP</label>
+                        </div>
+                    </div><!--Close col-->
+                    <div class="col">
+                        <!--col 2-->
+                        <div class="btn-group" role="group" aria-label="CIVL_ITAR checkbox toggle button group">
+                            <input type="radio" name="CIVL_ITAR" class="btn-check" id="civil_one_radio_id" autocomplete="off" checked>
+                            <label class="btn btn-outline-secondary btn-sm" for="civil_one_radio_id" data-bs-toggle="tooltip" data-bs-delay="500" title="Unavailable for EPP option">CIVL 01</label>
+                            <input type="radio" name="CIVL_ITAR" class="btn-check" id="Military_three_radio_id" autocomplete="off">
+                            <label class="btn btn-outline-danger btn-sm" for="Military_three_radio_id">ITAR 03</label>
+                            <input type="radio" name="CIVL_ITAR" class="btn-check" id="civil_four_radio_id" autocomplete="off" disabled>
+                            <label class="btn btn-outline-secondary btn-sm" for="civil_four_radio_id" data-bs-toggle="tooltip" data-bs-delay="500" title="EPP option only">CIVL 04</label>
+                        </div>
+                    </div><!--Close col-->
+                    <div class="col">
+                        <!--col 3-->
+                        <div class="form-check">
+                            <input class="form-check-input" name="AOG_checkbox_name" type="checkbox" value="" id="aog_id">
+                            <label class="form-check-label" for="aog_id">AOG</label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" name="Primary_SBU_checkbox_name" type="checkbox" value="" id="primary_sbu_id" checked style="visibility: hidden;">
+                            <label class="form-check-label" id="primary_sbu_id_label" for="primary_sbu_id" style="visibility: hidden;">Primary SBU</label>
+                        </div>
+                    </div><!--Close col-->
+                    <div class="col">
+                        <!--col 4-->
+                        <div class="form-check">
+                            <input class="form-check-input" name="leadTime_checkbox_name" type="checkbox" value="" id="leadTime_checkbox_id">
+                            <label class="form-check-label" for="leadTime_checkbox_id">Lead Time Scheduled</label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" name="sto_name" type="checkbox" value="" id="sto_id">
+                            <label class="form-check-label" for="sto_id" data-bs-toggle="tooltip" data-bs-placement="left" data-bs-delay="500" title="Stock Transfer Order">STO</label>
+                        </div>
+                    </div><!--Close col-->
+                    <div class="col">
+                        <!--col 5-->
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="creat_extend" id="create_id" checked onchange="createExtendFields()">
+                            <label class="form-check-label" for="create_id">Create</label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="creat_extend" id="extend_id" onchange="createExtendFields()">
+                            <label class="form-check-label" for="extend_id">Extend</label>
+                        </div>
+                    </div><!--Close col-->
+                    <div class="col">
+                        <!--col 6-->
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="make_buy" id="make_id" checked onchange="makeBuyFields()">
+                            <label class="form-check-label" for="make_id">Make</label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="make_buy" id="buy_id" onchange="makeBuyFields()">
+                            <label class="form-check-label" for="buy_id">Buy</label>
+                        </div>
+                    </div><!--Close col-->
+                </div><!--close row-->
+                <br>
+
+                
+                <div class="form-group row">
+                    <div class="col-md-6">
+                        <!--col 1-->
+                        <label for="materialNumber_id" class="col-form-label requiredLabel" style="text-align: left;" data-bs-toggle="tooltip" data-bs-placement="left" data-bs-delay="500"
+                               title="Mfr Part Number/ASG part number - no spaces - No vendor part numbers in OE plants - G/S required">Material Number</label>
+                        <input type="text" oninput="this.value = this.value.toUpperCase()" class="form-control required" id="materialNumber_id" name="mat_num_name" placeholder="Material Number (PN)" maxlength="20" aria-describedby="material Number textbox" required autofocus>
+                        <small id="matNumHelp_id_small" class="form-text text-muted">20x Character max</small>
+                    </div><!--close col 1-->
+                    <div class="col-md-6">
+                        <!--col 2-->
+                        <label for="materialDescription_id" class="col-form-label requiredLabel" style="text-align: left;" data-bs-toggle="tooltip" data-bs-placement="right" data-bs-delay="500"
+                               title="Material Description: Will auto-update to ALL CAPS - NO ASTERICKS">Material Description</label>
+                        <input type="text" oninput="this.value = this.value.toUpperCase()" class="form-control required" id="materialDescription_id" name="mat_desc_name" placeholder="Material Description (auto caps)" maxlength="40" aria-describedby="material description textbox" required>
+                        <small id="matDescHelp_id_small" class="form-text text-muted">40x Character max (must match TeamCenter if applicable)</small>
+                    </div><!--close col 2-->
+                </div><!--close row 1-->
+
+                <div class="form-group row">
+                    <!--row 2-->
+                    <div class="col">
+                        <!--col 1-->
+                        <label for="materialPlant_id" class="col-form-label requiredLabel" style="text-align: left;">Plant</label>
+                        <select class="form-select form-select-sm required" id="materialPlant_id" name="mat_plant_name" aria-label="Plant menu selection" style="width:100%;" required>
+                            <option selected disabled></option>
+                            <option value="2000">2000 - GA Chula Vista</option>
+                            <option value="2001">2001 - Goodrich Aerospace Europe SAS</option>
+                            <option value="2002">2002 - Goodrich Aerospace Europe GmbH</option>
+                            <option value="2005">2005 - Aero Tech - Tianjin Podding</option>
+                            <option value="2006">2006 - Goodrich Aerospace Canada Ltd</option>
+                            <option value="2010">2010 - GA Riverside</option>
+                            <option value="2020">2020 - GA Foley</option>
+                            <option value="2030">2030 - GA San Marcos</option>
+                            <option value="2040">2040 - GA Mexicali (Lux Mex)</option>
+                            <option value="2041">2041 - GA Mexicali MFG. (GAM)</option>
+                            <option value="2045">2045 - Goodrich  Aero Tech - Tianjin OE</option>
+                            <option value="2610">2610 - GA Everett</option>
+                            <option value="2196">2196 - Engineered Polymer Products, Goodrich</option>
+                        </select>
+                    </div><!--close col 1-->
+                    <!--Material Type R2 C2-->
+                    <div class="col-sm">
+                        <!--col 2-->
+                        <label for="productionSloc_id" class="col-form-label requiredLabel" style="text-align: left;">Production Storage Location</label>
+                        <input type="text" oninput="this.value = this.value.toUpperCase()" class="form-control required" id="productionSloc_id" name="prod_sloc_name" placeholder="Sloc" maxlength="4" aria-describedby="prodSloc" required>
+                        <small id="prodSloc" class="form-text text-muted">4x Character max</small>
+                    </div><!--close col 2-->
+                    <div class="col">
+                        <!--col 3-->
+                        <label for="salesOrg_id" class="col-form-label requiredLabel" style="text-align: left;">Sales Organization</label>
+                        <select class="form-select form-select-sm required" id="salesOrg_id" name="sales_org_name" aria-label="Sales org menu selection" style="width:100%;" required>
+                            <option selected disabled></option>
+                            <option value="4000">4000 - Rohr Inc. (CV)</option>
+                            <option value="4005">4005 - ASG-Everett</option>
+                            <option value="4010">4010 - Toulouse-Production</option>
+                            <option value="4025">4025 - ASG Canada</option>
+                            <option value="4030">4030 - Hamburg</option>
+                            <option value="4045">4045 - OE-Tianjin </option>
+                            <option value="4070">4070 - GR XCH Luxembourg (Mexicali P 2040)</option>
+                            <option value="4092">4092 - ASG Singapore</option>
+                        </select>
+                    </div><!--close col 3-->
+                </div><!--close row 2-->
+
+                <div class="form-group row">
+                    <!--row 3-->
+                    <div class="col-2">
+                        <!--col 1-->
+                        <div class="form-check">
+                            <input class="form-check-input" name="Additional_checkbox" type="checkbox" value="" id="additional_id" onchange="additionalCheckBox()">
+                            <label class="form-check-label" for="additional_id" id="additional_id_label">Add sloc</label>
+                            <small id="additional_id_small" class="form-text text-muted">(check to add a 2nd sloc)</small>
+                        </div>
+                    </div><!--Close col-->
+                    <div class="col-4">
+                        <!--col 2-->
+                        <label for="materialPlantExtend_id" class="col-form-label" style="text-align: left;" id="materialPlantExtendLabel">Additional Plant</label>
+                        <select class="form-select form-select-sm" id="materialPlantExtend_id" name="mat_plant_extend_name" aria-label="Plant menu selection Extension" style="width:100%;" disabled>
+                            <option id="BlankPlantExtendOption" selected disabled></option>
+                            <option value="2000">2000 - GA Chula Vista</option>
+                            <option value="2001">2001 - Goodrich Aerospace Europe SAS</option>
+                            <option value="2002">2002 - Goodrich Aerospace Europe GmbH</option>
+                            <option value="2005">2005 - Aero Tech - Tianjin Podding</option>
+                            <option value="2006">2006 - Goodrich Aerospace Canada Ltd</option>
+                            <option value="2010">2010 - GA Riverside</option>
+                            <option value="2020">2020 - GA Foley</option>
+                            <option value="2030">2030 - GA San Marcos</option>
+                            <option value="2040">2040 - GA Mexicali (Lux Mex)</option>
+                            <option value="2041">2041 - GA Mexicali MFG. (GAM)</option>
+                            <option value="2045">2045 - Goodrich  Aero Tech - Tianjin OE</option>
+                            <option value="2610">2610 - GA Everett</option>
+                            <option value="2196">2196 - Engineered Polymer Products, Goodrich</option>
+                        </select>
+                    </div><!--close col 1-->
+                    <div class="col-md-2">
+                        <!--col 3-->
+                        <label for="productionSlocExtend_id" class="col-form-label" style="text-align: left;" id="productionSlocExtendLabel_id">Additional Sloc</label>
+                        <input type="text" oninput="this.value = this.value.toUpperCase()" class="form-control" id="productionSlocExtend_id" name="prod_sloc_extend_name" placeholder="Sloc" maxlength="4" aria-describedby="production storage location extension" disabled>
+                        <small id="prodSlocExtend" class="form-text text-muted">4x Character max</small>
+                    </div><!--close col 2-->
+                    <div class="col-4">
+                        <!--col 4-->
+                        <label for="salesOrgExtend_id" class="col-form-label" style="text-align: left;" id="salesOrgExtendLabel_id">Additional Sales Organization</label>
+                        <select class="form-select form-select-sm" id="salesOrgExtend_id" name="sales_org_extend_name" aria-label="Sales org menu selection extension" style="width:100%;" disabled>
+                            <option id="blankSalesOrgExtendOption" selected disabled></option>
+                            <option value="4000">4000 - Rohr Inc. (CV)</option>
+                            <option value="4005">4005 - ASG-Everett</option>
+                            <option value="4010">4010 - Toulouse-Production</option>
+                            <option value="4025">4025 - ASG Canada</option>
+                            <option value="4030">4030 - Hamburg</option>
+                            <option value="4045">4045 - OE-Tianjin </option>
+                            <option value="4070">4070 - GR XCH Luxembourg (Mexicali P 2040)</option>
+                            <option value="4092">4092 - ASG Singapore</option>
+                        </select>
+                    </div><!--close col 3-->
+                </div><!--close row 3-->
+
+                <div class="form-group row">
+                    <!--row 4-->
+                    <div class="col">
+                        <!--col 1-->
+                        <label for="materialType_id" class="col-form-label requiredLabel" style="text-align: left;">Material Type</label>
+                        <select class="form-select form-select-sm required" id="materialType_id" name="mat_type_name" aria-label="Material type menu selection" style="width:100%;" required>
+                            <option selected disabled></option>
+                            <option value="Z001">Z001 End Item (MTO)</option>
+                            <option value="Z002">Z002 Assembly (GPD/MTS)</option>
+                            <option value="Z003">Z003 Bonded Assy (GPD/MTS)</option>
+                            <option value="Z004">Z004 Detail (MTS)</option>
+                            <option value="Z005">Z005 Raw Material</option>
+                            <option value="Z007">Z007 </option>
+                            <option value="Z012">Z012 Non-Prod-Non-Valuated (4x4 Chm)</option>
+                            <option value="Z016">Z016 Customer Furnished</option>
+                            <option value="Z019">Z019 Hardware</option>
+                            <option value="Z020">Z020 Chemicals (3x5)</option>
+                            <option value="Z021">Z021 Pachaging Mat'l</option>
+                        </select>
+                    </div><!--close col 1-->
+                    <div class="col">
+                        <!--col 2-->
+                        <label for="ProgramType_id" class="col-form-label requiredLabel" style="text-align: left;">Program</label>
+                        <select class="form-select form-select-sm required" id="ProgramType_id" name="ProgramType_name" aria-label="Program menu selection" style="width:100%;" required>
+                            <option selected disabled></option>
+                            <option value="737">737</option>
+                            <option value="767">767 (CF6-80C2)</option>
+                            <option value="787">787</option>
+                            <option value="A320NEO">A320NEO</option>
+                            <option value="A350">A350</option>
+                            <option value="C-Series">C-Series</option>
+                            <option value="CF34-10">CF34-10</option>
+                            <option value="CF6-80E1">CF6-80E1</option>
+                            <option value="CFM56-5">CFM56-5 A/B</option>
+                            <option value="Dassault">Dassault</option>
+                            <option value="E175-E2">E175-E2</option>
+                            <option value="E190-E2">E190-E2</option>
+                            <option value="E195-E2">E195-E2</option>
+                            <option value="Embraer Tail Cone">Embraer Tail Cone</option>
+                            <option value="Gridlock">Gridlock</option>
+                            <option value="K1F">K1F</option>
+                            <option value="KC-390">KC-390</option>
+                            <option value="MRJ">MRJ</option>
+                            <option value="Sorella">Sorella</option>
+                            <option value="Trent 700">Trent 700 (RB211-TRENT)</option>
+                            <option value="Trent 900">Trent 900</option>
+                            <option value="V2500">V2500</option>
+                            <option value="C-5">C-5 (out of production)</option>
+                        </select>
+                    </div><!--close col 2-->
+                    <div class="col">
+                        <!--col 3-->
+                        <label for="scenarioType_id" class="col-form-label requiredLabel" style="text-align: left;">Scenario</label>
+                        <select class="form-select form-select-sm required" id="scenarioType_id" name="scenarioType_Name" aria-label="Scenario menu selection" style="width:100%;" required>
+                            <option selected disabled></option>
+                            <option value="MTO End Item - Non Master Scheduled ">MTO End Item - Non Master Scheduled </option>
+                            <option value="MTO End Item - Master Scheduled">MTO End Item - Master Scheduled</option>
+                            <option value="MTO End Item - Master Scheduled Kits">MTO End Item - Master Scheduled Kits</option>
+                            <option value="MTO End Item - Non Master Scheduled Kits">MTO End Item - Non Master Scheduled Kits</option>
+                            <option value="MTO End Item - Master Scheduled Nacelle">MTO End Item - Master Scheduled Nacelle</option>
+                            <option value="MTO End Item - Nacelle BOM - Service - Non Master Scheduled">MTO End Item - Nacelle BOM - Service - Non Master Scheduled</option>
+                            <option value="MTO End Item - Majors Collector Kit - Non Master Scheduled">MTO End Item - Majors Collector Kit - Non Master Scheduled</option>
+                            <option value="GPD Separable Assembly - Make">GPD Separable Assembly - Make</option>
+                            <option value="GPD Separable Assembly - Make - RMN Kits">GPD Separable Assembly - Make - RMN Kits</option>
+                            <option value="GPD Separable Assembly - Make Kits">GPD Separable Assembly - Make Kits</option>
+                            <option value="GPD Inseparable Assembly - Make">GPD Inseparable Assembly - Make</option>
+                            <option value="MTS Assembly - Purchased">MTS Assembly - Purchased</option>
+                            <option value="MTS Assembly - Purchased RMN Kit">MTS Assembly - Purchased RMN Kit</option>
+                            <option value="MTS Assembly -  Purchased - Subcontracted">MTS Assembly -  Purchased - Subcontracted</option>
+                            <option value="MTS Detail - Purchased">MTS Detail - Purchased</option>
+                            <option value="MTS Detail - Class 14 GS (685-* or 285-*)">MTS Detail - Class 14 GS (685-* or 285-*)</option>
+                            <option value="MTS Detail - Class 12 or 14 GS (Equipment)">MTS Detail - Class 12 or 14 GS (Equipment)</option>
+                            <option value="Class 6/10 2BIN Kits">Class 6/10 2BIN Kits</option>
+                            <option value="MTS Detail - Purchased Customer Return Rework">MTS Detail - Purchased Customer Return Rework</option>
+                            <option value="MTS Detail - Make - Without Supplier First Cut">MTS Detail - Make - Without Supplier First Cut</option>
+                            <option value="MTS Detail - Make - Nested">MTS Detail - Make - Nested</option>
+                            <option value="MTS Detail - Make - With Supplier First Cut">MTS Detail - Make - With Supplier First Cut</option>
+                            <option value="Raw Material">Raw Material</option>
+                            <option value="Service Part">Service Part</option>
+                            <option value="Customer Furnished">Customer Furnished</option>
+                            <option value="Non Product, Non Valuated">Non Product, Non Valuated</option>
+                            <option value="Packaging Materials">Packaging Materials</option>
+                            <option value="Test Panel / Coupon">Test Panel / Coupon</option>
+                        </select>
+                    </div><!--close col 3-->
+                </div><!--close row 3-->
+
+                <div class="form-group row">
+                    <!--row-->
+                    <div class="col-md">
+                        <!--col-->
+                        <label for="component_id" class="col-form-label requiredLabel" style="text-align: left;">Component</label>
+                        <select class="form-select form-select-sm required" id="component_id" name="component_name" aria-label="Component menu selection" style="width:100%;" required>
+                            <option selected disabled></option>
+                            <option value="Core Cowl">Core Cowl</option>
+                            <option value="EBU">EBU</option>
+                            <option value="Engine Mounts">Engine Mounts</option>
+                            <option value="Exhaust">Exhaust</option>
+                            <option value="Fan Case">Fan Case</option>
+                            <option value="Fan Cowl">Fan Cowl</option>
+                            <option value="Inlet">Inlet</option>
+                            <option value="Pylon">Pylon</option>
+                            <option value="Thrust Reverser">Thrust Reverser</option>
+                            <option value="Torque Box">Torque Box</option>
+                        </select>
+                    </div><!--close col-->
+                    <div class="col-md">
+                        <!--col-->
+                        <label for="raw_mat_id" class="col-form-label" style="text-align: left;" title="Raw Material Spec">Raw Material Spec</label>
+                        <input type="text" class="form-control" id="raw_mat_id" name="raw_mat_name" placeholder="Raw Mat" maxlength="15" aria-describedby="Raw Material Specification">
+                        <small id="raw_mat_id_small" class="form-text text-muted">15x Character max</small>
+                    </div><!--close col-->
+                    <div class="col-md">
+                        <!--col-->
+                        <label for="authority_id" class="col-form-label" style="text-align: left;" title="Authority (i.e. ECA / MCA)">Authority (i.e. ECA / MCA)</label>
+                        <input type="text" class="form-control" id="authority_id" name="authority_name" placeholder="Authority" maxlength="15" aria-describedby="Authority (i.e. ECA / MCA)">
+                        <small id="authority_id_small" class="form-text text-muted">15x Character max</small>
+                    </div><!--close col-->
+                    <div class="col-md">
+                        <!--col-->
+                        <label for="next_higher_assm_id" class="col-form-label" style="text-align: left;" title="Next Higher Assembly">Next Higher Assembly</label>
+                        <input type="text" class="form-control" id="next_higher_assm_id" name="next_higher_assm_name" placeholder="Next Higher Assm" maxlength="15" aria-describedby="Next Higher Assembly">
+                        <small id="next_higher_assm_id_small" class="form-text text-muted">15x Character max</small>
+                    </div><!--close col-->
+                </div><!--close row-->
+
+                <div class="form-group row">
+                    <!--row 4-->
+                    <div class="col-md-6">
+                        <!--col 1-->
+                        <!--Also add a text field for Old/Similar PN's, 18char max-->
+                        <label for="old_pn_id" class="col-form-label" style="text-align: left;" data-bs-toggle="tooltip" data-bs-placement="left" data-bs-delay="500"
+                               title="Old/Similar PN - For reference only, do NOT expect MDP to compare this info.  Max character in SAP is 18x, if you need more just add it to the comment box">Old/Similar Material Number</label>
+                        <input type="text" oninput="this.value = this.value.toUpperCase()" class="form-control" id="old_pn_id" name="old_pn_name" placeholder="AKA Previous PN" maxlength="18" aria-describedby="Old Similar Material Number">
+                        <small id="old_id_small" class="form-text text-muted">18x Character max</small>
+                    </div><!--close col 1-->
+                    <div class="col-md-2">
+                        <!--col 2-->
+                        <label for="prod_sup_id" class="col-form-label" style="text-align: left;" title="Production Supervisor">Production Supervisor</label>
+                        <input type="text" oninput="this.value = this.value.toUpperCase()" class="form-control" id="prod_sup_id" name="prod_sup_name" placeholder="Prod Sup" maxlength="3" aria-describedby="Production Supervisor">
+                        <small id="Prod_sup_id_small" class="form-text text-muted">3x Character max</small>
+                    </div><!--close col 2-->
+                    <div class="col-md-2">
+                        <!--col 3-->
+                        <label for="mrp_cntrl_id" class="col-form-label" style="text-align: left;" title="MRP Controller (planner)">MRP Controller</label>
+                        <input type="text" oninput="this.value = this.value.toUpperCase()" class="form-control" id="mrp_cntrl_id" name="mrp_cntrl_name" placeholder="MRP" maxlength="3" aria-describedby="MRP Controller">
+                        <small id="mrp_cntrl_id_small" class="form-text text-muted">3x Character max</small>
+                    </div><!--close col 3-->
+                    <div class="col-md-2">
+                        <!--col 4-->
+                        <label for="sloc_ep_id" class="col-form-label" style="text-align: left;" data-bs-toggle="tooltip" data-bs-placement="right" data-bs-delay="500"
+                               title="SAP Definition: Default storage location for external procurement Key of the storage location that is proposed in the purchase requisition in materials planning for subsequent storage of the material. In the case of a material procured externally, this storage location is proposed in the planned order in materials planning.">EP Storage Location</label>
+                        <input type="text" oninput="this.value = this.value.toUpperCase()" class="form-control" id="sloc_ep_id" name="ep_sloc_name" placeholder="Sloc" maxlength="4" aria-describedby="epSloc">
+                        <small id="epSloc" class="form-text text-muted">4x Character max</small>
+                    </div><!--close col 4-->
+                </div><!--close row 4-->
+
+                <div class="form-group row">
+                    <!--row 5-->
+                    <div class="col">
+                        <!--col 1-->
+                        <span class="requiredLabel"></span>
+                        <textarea name="comment_name" id="commentBox_id" class="form-control required" maxlength="350"
+                                  placeholder="Enter additional comments here. Please include your name if different from your computer logon, and the EAC if available" required></textarea>
+                    </div><!--close col 1-->
+                </div><!--close row 5-->
+                <br>
+
+                <div class="form-group row">
+                    <!--row AddPart/Submit/Reset Form buttons-->
+                    <div class="col">
+                        <!--col 1-->
+                        <input class="btn btn-success" id="add_part_button_id" type="submit" value="(+) Add" onclick="addMoreParts()">
+                        <input class="btn btn-primary" id="submit_button_id" type="submit" value="Submit Request" onclick="onSubmitPress()" disabled>
+                    </div><!--close col 1-->
+                    <div class="col">
+                        <!--col 2-->
+                        <input class="btn btn-info" id="edit_button" type="submit" value="Finish Edit" onclick="onEditButtonPress()" style="visibility: hidden;">
+                        <input class="btn btn-danger" id="reset_button" type="reset" value="Reset" onclick="return reset_req_form()" style="float: right;">
+                    </div><!--close col 2-->
+                </div><!--close row ??-->
+            </form>
+            <br>
+
+            <div class="row">
+                <div class="col">
+                    <div id="DisplayCurrentlySelectedItemForEditing"></div><!--Just used to display the item being edited-->
+                    <div id="DisplayUnavailableItemsInGray"></div><!--displays the remaining items-->
+                    <ul id="displayObjs" style="list-style-type: none; font-size: 14px;">
+                        <!--JS adds objects (requests via the "addMoreParts" button) here-->
+                    </ul>
+                </div>
+                <div class="col">
+                    <div id="edit_success_pop_up_id">
+                    </div>
+                    <script>
+                        document.getElementById('edit_button').addEventListener("click", editSuccessful);
+                    </script>
+                </div>
+            </div>
+
+            <nav style="border-top: solid;">
+                <!--Navigation-->
+                <br>
+                <div class="row">
+                    <div class="col">
+                        <div style="text-align: center;"><a href="../index.html">Home</a></div>
+                    </div>
+                    <div class="col">
+                        <div style="text-align: center;"><a href="approver.html">Approver</a></div>
+                    </div>
+                    <div class="col">
+                        <div style="text-align: center;"><a href="mdp.html">MDP</a></div>
+                    </div>
+                    <div class="col">
+                        <div style="text-align: center;"><a href="contact_us.html">Contact Us</a></div>
+                    </div>
+                    <div class="col">
+                        <div style="text-align: center;"><a href="http://msp0ww04/Turnback/Navigate.cshtml">MDP Turnback</a></div>
+                    </div>
+                </div><!--close row-->
+            </nav>
+            <br>
+        </div><!--/container-->
+        <!--this gets the green exclamation mark for the edit button success pop-up-->
+        <svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+            <symbol id="check-circle-fill" fill="currentColor" viewBox="0 0 16 16">
+                <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-3.97-3.03a.75.75 0 0 0-1.08.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-.01-1.05z" />
+            </symbol>
+        </svg>
+
+        <script>
+            /* Initializes tooltips */
+            /* the tooltip delay is set to 500 miliseconds for both hide and show, this is through the data-bs-delay option */
+            /* Make sure this is at the bottom of your page AFTER the form at least*/
+            var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'))
+            var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
+                return new bootstrap.Tooltip(tooltipTriggerEl)
+            })
+        </script>
+    </main>
+
+
+
+
+</body>
+
+</html>
