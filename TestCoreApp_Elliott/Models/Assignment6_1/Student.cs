@@ -1,4 +1,4 @@
-﻿namespace TestCoreApp_Elliott.Models
+﻿namespace TestCoreApp_Elliott.Assignment6_1.Models
 {
     public class Student
     {

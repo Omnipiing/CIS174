@@ -1,9 +1,9 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using TestCoreApp_Elliott.Models;
+using TestCoreApp_Elliott.Assignment6_1.Models;
 
-namespace TestCoreApp_Elliott.Controllers
+namespace TestCoreApp_Elliott.Assignment6_1.Controllers
 {
-    public class AssignmentController : Controller
+    public class Assignment6_1Controller : Controller
     {
         [HttpGet]
         public IActionResult Index()

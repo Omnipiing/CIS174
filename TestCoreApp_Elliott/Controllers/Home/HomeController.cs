@@ -1,6 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 
-namespace TestCoreApp_Elliott.Controllers
+namespace TestCoreApp_Elliott.Area.Controllers
 {
     public class HomeController : Controller
     {

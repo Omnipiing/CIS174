@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\U377330\\Documents\\School\\CIS174\\TestCoreApp_Elliott\\TestCoreApp_Elliott.csproj": {}
+    "C:\\Users\\U377330\\Documents\\School\\CIS174\\VS\\TestCoreApp_Elliott\\TestCoreApp_Elliott.csproj": {}
   },
   "projects": {
-    "C:\\Users\\U377330\\Documents\\School\\CIS174\\TestCoreApp_Elliott\\TestCoreApp_Elliott.csproj": {
+    "C:\\Users\\U377330\\Documents\\School\\CIS174\\VS\\TestCoreApp_Elliott\\TestCoreApp_Elliott.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\U377330\\Documents\\School\\CIS174\\TestCoreApp_Elliott\\TestCoreApp_Elliott.csproj",
+        "projectUniqueName": "C:\\Users\\U377330\\Documents\\School\\CIS174\\VS\\TestCoreApp_Elliott\\TestCoreApp_Elliott.csproj",
         "projectName": "TestCoreApp_Elliott",
-        "projectPath": "C:\\Users\\U377330\\Documents\\School\\CIS174\\TestCoreApp_Elliott\\TestCoreApp_Elliott.csproj",
+        "projectPath": "C:\\Users\\U377330\\Documents\\School\\CIS174\\VS\\TestCoreApp_Elliott\\TestCoreApp_Elliott.csproj",
         "packagesPath": "C:\\Users\\U377330\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\U377330\\Documents\\School\\CIS174\\TestCoreApp_Elliott\\obj\\",
+        "outputPath": "C:\\Users\\U377330\\Documents\\School\\CIS174\\VS\\TestCoreApp_Elliott\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
