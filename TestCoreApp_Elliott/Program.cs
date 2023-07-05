@@ -1,7 +1,16 @@
+using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Configuration;
+using TestCoreApp_Elliott.Models;
+using TestCoreApp_Elliott.Models.OlympicGames;
+
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
+
+builder.Services.AddDbContext<CountryContext>(options =>
+	options.UseSqlServer(builder.Configuration.GetConnectionString("CountryContext")));
 
 var app = builder.Build();
 
@@ -19,6 +28,10 @@ app.UseStaticFiles();
 app.UseRouting();
 
 app.UseAuthorization();
+
+app.MapControllerRoute(
+	name: "olympics",
+	pattern: "Olympic/{controller=Country}/{action=Index}/cat/{activeCat}/game/{activeGame}");
 
 app.MapControllerRoute(
     name: "assignment",

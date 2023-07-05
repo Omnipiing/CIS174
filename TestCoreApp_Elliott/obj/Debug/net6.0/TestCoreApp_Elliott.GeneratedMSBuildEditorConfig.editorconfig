@@ -9,41 +9,45 @@ build_property.EnforceExtendedAnalyzerRules =
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = TestCoreApp_Elliott
 build_property.RootNamespace = TestCoreApp_Elliott
-build_property.ProjectDir = C:\Users\U377330\Documents\School\CIS174\VS\TestCoreApp_Elliott\
+build_property.ProjectDir = C:\Users\jacka\Documents\School\CIS174\Code\VS\TestCoreApp_Elliott\
 build_property.RazorLangVersion = 6.0
 build_property.SupportLocalizedComponentNames = 
 build_property.GenerateRazorMetadataSourceChecksumAttributes = 
-build_property.MSBuildProjectDirectory = C:\Users\U377330\Documents\School\CIS174\VS\TestCoreApp_Elliott
+build_property.MSBuildProjectDirectory = C:\Users\jacka\Documents\School\CIS174\Code\VS\TestCoreApp_Elliott
 build_property._RazorSourceGeneratorDebug = 
 
-[C:/Users/U377330/Documents/School/CIS174/VS/TestCoreApp_Elliott/Views/Assignment6_1/Assignment6_1.cshtml]
+[C:/Users/jacka/Documents/School/CIS174/Code/VS/TestCoreApp_Elliott/Views/Assignment6_1/Assignment6_1.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQXNzaWdubWVudDZfMVxBc3NpZ25tZW50Nl8xLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/U377330/Documents/School/CIS174/VS/TestCoreApp_Elliott/Views/Home/About.cshtml]
+[C:/Users/jacka/Documents/School/CIS174/Code/VS/TestCoreApp_Elliott/Views/Country/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ291bnRyeVxJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/jacka/Documents/School/CIS174/Code/VS/TestCoreApp_Elliott/Views/Home/About.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxBYm91dC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/U377330/Documents/School/CIS174/VS/TestCoreApp_Elliott/Views/Home/Contact.cshtml]
+[C:/Users/jacka/Documents/School/CIS174/Code/VS/TestCoreApp_Elliott/Views/Home/Contact.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxDb250YWN0LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/U377330/Documents/School/CIS174/VS/TestCoreApp_Elliott/Views/Home/Index.cshtml]
+[C:/Users/jacka/Documents/School/CIS174/Code/VS/TestCoreApp_Elliott/Views/Home/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/U377330/Documents/School/CIS174/VS/TestCoreApp_Elliott/Views/Home/Privacy.cshtml]
+[C:/Users/jacka/Documents/School/CIS174/Code/VS/TestCoreApp_Elliott/Views/Home/Privacy.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQcml2YWN5LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/U377330/Documents/School/CIS174/VS/TestCoreApp_Elliott/Views/_ViewImports.cshtml]
+[C:/Users/jacka/Documents/School/CIS174/Code/VS/TestCoreApp_Elliott/Views/_ViewImports.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/U377330/Documents/School/CIS174/VS/TestCoreApp_Elliott/Views/_ViewStart.cshtml]
+[C:/Users/jacka/Documents/School/CIS174/Code/VS/TestCoreApp_Elliott/Views/_ViewStart.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/U377330/Documents/School/CIS174/VS/TestCoreApp_Elliott/Views/Shared/_Layout.cshtml]
+[C:/Users/jacka/Documents/School/CIS174/Code/VS/TestCoreApp_Elliott/Views/Shared/_Layout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = b-s88v9wtydu
