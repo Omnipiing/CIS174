@@ -9,7 +9,7 @@ var builder = WebApplication.CreateBuilder(args);
 // Add services to the container.
 builder.Services.AddControllersWithViews();
 
-builder.Services.AddDbContext<CountryContext>(options =>
+builder.Services.AddDbContext<OlympicsContext>(options =>
 	options.UseSqlServer(builder.Configuration.GetConnectionString("CountryContext")));
 
 var app = builder.Build();
@@ -31,7 +31,7 @@ app.UseAuthorization();
 
 app.MapControllerRoute(
 	name: "olympics",
-	pattern: "Olympic/{controller=Country}/{action=Index}/cat/{activeCat}/game/{activeGame}");
+	pattern: "Olympics/{controller=Olympics}/{action=Index}/cat/{activeCat}/game/{activeGame}");
 
 app.MapControllerRoute(
     name: "assignment",

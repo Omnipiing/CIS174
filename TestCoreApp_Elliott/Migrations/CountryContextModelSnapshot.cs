@@ -9,7 +9,7 @@ using TestCoreApp_Elliott.Models.OlympicGames;
 
 namespace TestCoreApp_Elliott.Migrations
 {
-    [DbContext(typeof(CountryContext))]
+    [DbContext(typeof(OlympicsContext))]
     partial class CountryContextModelSnapshot : ModelSnapshot
     {
         protected override void BuildModel(ModelBuilder modelBuilder)

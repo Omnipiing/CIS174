@@ -10,7 +10,7 @@ using TestCoreApp_Elliott.Models.OlympicGames;
 
 namespace TestCoreApp_Elliott.Migrations
 {
-    [DbContext(typeof(CountryContext))]
+    [DbContext(typeof(OlympicsContext))]
     [Migration("20230705055714_Initial")]
     partial class Initial
     {
