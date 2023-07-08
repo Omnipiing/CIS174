@@ -1,3 +1,0 @@
-﻿<Project>
-  <Import Project="..\buildMultiTargeting\TestCoreApp_Elliott.props" />
-</Project>
