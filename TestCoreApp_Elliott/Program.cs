@@ -1,8 +1,5 @@
 using Microsoft.EntityFrameworkCore;
-using Microsoft.Extensions.Configuration;
-using TestCoreApp_Elliott.Models;
 using TestCoreApp_Elliott.Models.OlympicGames;
-
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -31,11 +28,11 @@ app.UseAuthorization();
 
 app.MapControllerRoute(
 	name: "olympics",
-	pattern: "Olympics/{controller=Olympics}/{action=Index}/cat/{activeCat}/game/{activeGame}");
+	pattern: "{area:exists}/Olympics/{controller=Olympics}/{action=Index}/cat/{activeCat}/game/{activeGame}");
 
 app.MapControllerRoute(
     name: "assignment",
-    pattern: "Assignment/{controller=Assignment6_1}/{action=Assignment6_1}/{accessLevel?}");
+    pattern: "{area:exists}/Assignment/{controller=Assignment6_1}/{action=Assignment6_1}/{accessLevel?}");
 
 app.MapControllerRoute(
     name: "default",
