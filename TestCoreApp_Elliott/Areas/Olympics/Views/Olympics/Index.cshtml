@@ -26,7 +26,8 @@
 				<div class="list-group">
 					@foreach (Game game in Model.Games)
 					{
-						<a asp-action="Index"
+						<a asp-area="Olympics"
+						   asp-action="Index"
 						   asp-route-activeGame="@game.GameId"
 						   asp-route-activeCat="@Model.ActiveCat"
 						   class="list-group-item @Model.CheckActiveGame(game.GameId)">
@@ -38,7 +39,8 @@
 				<div class="list-group">
 					@foreach (Category cat in Model.Categories)
 					{
-						<a asp-action="Index"
+						<a asp-area="Olympics"
+						   asp-action="Index"
 						   asp-route-activeGame="@Model.ActiveGame"
 						   asp-route-activeCat="@cat.CategoryId"
 						   class="list-group-item @Model.CheckActiveCat(cat.CategoryId)">

@@ -7,7 +7,7 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddControllersWithViews();
 
 builder.Services.AddDbContext<OlympicsContext>(options =>
-	options.UseSqlServer(builder.Configuration.GetConnectionString("CountryContext")));
+	options.UseSqlServer(builder.Configuration.GetConnectionString("OlympicsContext")));
 
 var app = builder.Build();
 
