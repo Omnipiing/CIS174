@@ -26,9 +26,10 @@ app.UseRouting();
 
 app.UseAuthorization();
 
-app.MapControllerRoute(
+app.MapAreaControllerRoute(
 	name: "olympics",
-	pattern: "Olympics/{area=Olympics}/{controller=Olympics}/{action=Index}/cat/{activeCat}/game/{activeGame}");
+    areaName: "olympics",
+	pattern: "{controller=Olympics}/{action=Index}/cat/{activeCat}/game/{activeGame}");
 
 app.MapControllerRoute(
     name: "assignment",
