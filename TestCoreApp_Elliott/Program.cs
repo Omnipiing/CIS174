@@ -28,12 +28,13 @@ app.UseAuthorization();
 
 app.MapAreaControllerRoute(
 	name: "olympics",
-    areaName: "olympics",
-	pattern: "{controller=Olympics}/{action=Index}/cat/{activeCat}/game/{activeGame}");
+    areaName: "Olympics",
+	pattern: "Home/{action=Index}/cat/{activeCat}/game/{activeGame}");
 
-app.MapControllerRoute(
+app.MapAreaControllerRoute(
     name: "assignment",
-    pattern: "Assignment/{area=Assignment6_1}/{controller=Assignment6_1}/{action=Assignment6_1}/{accessLevel?}");
+    areaName: "Assignment6_1",
+    pattern: "Assignment6_1/{action=Assignment6_1}/{accessLevel?}");
 
 app.MapControllerRoute(
     name: "default",
