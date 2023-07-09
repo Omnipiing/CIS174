@@ -1,4 +1,6 @@
 ﻿@using TestCoreApp_Elliott.Models.OlympicGames
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+
 @model OlympicsListViewModel
 @{
 	Layout = null;
@@ -27,6 +29,7 @@
 					@foreach (Game game in Model.Games)
 					{
 						<a asp-area="Olympics"
+							asp-controller="Olympics"
 						   asp-action="Index"
 						   asp-route-activeGame="@game.GameId"
 						   asp-route-activeCat="@Model.ActiveCat"
@@ -40,6 +43,7 @@
 					@foreach (Category cat in Model.Categories)
 					{
 						<a asp-area="Olympics"
+							asp-controller="Olympics"
 						   asp-action="Index"
 						   asp-route-activeGame="@Model.ActiveGame"
 						   asp-route-activeCat="@cat.CategoryId"
