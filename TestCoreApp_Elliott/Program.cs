@@ -51,7 +51,7 @@ app.MapControllerRoute(
 //	https://localhost:7044/Olympics/Home
 //	https://localhost:7044/Olympics/Home/Index
 app.MapControllerRoute(
-	name: "olympicsDefault",
+	name: "olympicsHome",
 	pattern: "{area:exists}/{controller=Home}/{action=Index}");
 
 // This will catch:

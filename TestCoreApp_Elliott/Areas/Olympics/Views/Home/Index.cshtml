@@ -1,4 +1,5 @@
-﻿@using TestCoreApp_Elliott.Models.OlympicGames
+﻿@using TestCoreApp_Elliott.Areas.Olympics.Models
+@using TestCoreApp_Elliott.Models.OlympicGames
 @addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
 
 @model OlympicsListViewModel
@@ -20,6 +21,25 @@
 		<div class="container">
 			<header class="text-center text-white">
 				<h1 class="bg-primary mt-3 p-3">Olympic Countries</h1>
+
+				@* show any message in TempData *@
+				@if (TempData["message"] != null)
+				{
+					<h4 class="bg-success p-2">@TempData["message"]</h4>
+				}
+
+				@* show link to Favorites page unless on Favorites page *@
+				@if (!ViewContext.View.Path.Contains("Favorites"))
+				{
+					var session = new OlympicSession(Context.Session);
+					<h5 class="bg-info p-2">
+						<a asp-area="Olympics" asp-controller="Favorites" asp-action="Index" 
+						   class="text-white">My Favorite Teams</a>
+
+						@* get number of Favorite teams from session and display in badge *@
+						<span class="badge badge-light">@(session.GetMyCountryCount())</span>
+					</h5>
+				}
 			</header>
 		</div>
 		<div class="row">
@@ -58,8 +78,10 @@
 					@foreach (Country country in Model.Countries)
 					{
 						<li class="list-inline-item">
-							<img src="~/flags/@country.FlagImage" alt="@country.Name"
-								title="@country.Name @country.Game.Name @country.Category.Name" />
+							<a asp-area="Olympics" asp-controller="Home" asp-action="Details" asp-route-id="@country.CountryID">
+								<img src="~/flags/@country.FlagImage" alt="@country.Name"
+									title="@country.Name | @country.Game.Name @country.Category.Name" />
+							</a>
 						</li>
 					}
 				</ul>

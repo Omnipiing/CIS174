@@ -1,9 +1,11 @@
 ﻿using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Mvc;
 using TestCoreApp_Elliott.Models.OlympicGames;
 
 namespace TestCoreApp_Elliott.Areas.Olympics.Models
 {
-	public class OlympicSession
+    [Area("Olympics")]
+    public class OlympicSession
 	{
 		private const string CountryKey = "mycountries";
 		private const string CountKey = "countrycount";

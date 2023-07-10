@@ -1,9 +1,11 @@
 ﻿using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json;
 
 namespace TestCoreApp_Elliott.Areas.Olympics.Models
 {
-	public static class SessionExtensions
+    [Area("Olympics")]
+    public static class SessionExtensions
 	{
 		public static void SetObject<T>(this ISession session,
 			string key, T value)
