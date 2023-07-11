@@ -15,8 +15,11 @@ namespace TestCoreApp_Elliott.Models.OlympicGames
 			get => categories;
 			set
 			{
-				categories = value;
-				categories.Insert(0, new Category { CategoryId = "all", Name = "All" });
+				categories = new List<Category>
+				{
+					new Category { CategoryId = "all", Name = "All" }
+				};
+				categories.AddRange(value);
 			}
 		}
 
@@ -26,8 +29,11 @@ namespace TestCoreApp_Elliott.Models.OlympicGames
 			get => games;
 			set
 			{
-				games = value;
-				games.Insert(0, new Game { GameId = "all", Name = "All" });
+				games = new List<Game>
+				{
+					new Game { GameId = "all", Name = "All" }
+				};
+				games.AddRange(value);
 			}
 		}
 

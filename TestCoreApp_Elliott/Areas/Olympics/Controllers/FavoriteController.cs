@@ -25,9 +25,12 @@ namespace TestCoreApp_Elliott.Areas.Olympics.Controllers
 		public RedirectToActionResult Delete()
 		{
 			var session = new OlympicSession(HttpContext.Session);
-			session.RemoveMyCountries();
+			var cookies = new OlympicCookies(Response.Cookies);
 
-			TempData["message"] = "Favorite teams cleared";
+			session.RemoveMyCountries();
+			cookies.RemoveMyCountryIds();
+
+			TempData["message"] = "Favorite countries cleared";
 
 			return RedirectToAction("Index", "Home",
 				new

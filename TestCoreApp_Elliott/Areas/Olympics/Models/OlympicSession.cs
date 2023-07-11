@@ -25,7 +25,7 @@ namespace TestCoreApp_Elliott.Areas.Olympics.Models
 		}
 		public List<Country> GetMyCountries() =>
 			session.GetObject<List<Country>>(CountryKey) ?? new List<Country>();
-		public int GetMyCountryCount() => session.GetInt32(CountKey) ?? 0;
+		public int? GetMyCountryCount() => session.GetInt32(CountKey) ?? 0;
 
 		public void SetActiveCat(string activeCat) =>
 			session.SetString(CatKey, activeCat);

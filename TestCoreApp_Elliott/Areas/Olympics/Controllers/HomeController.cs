@@ -21,7 +21,23 @@ namespace TestCoreApp_Elliott.Controllers.OlympicGames
 			session.SetActiveCat(activeCat);
 			session.SetActiveGame(activeGame);
 
-			var model = new OlympicsListViewModel
+            // if no count value in session, use data in cookie to restore fave teams in session 
+            int? count = session.GetMyCountryCount();
+            if (count == null)
+            {
+                var cookies = new OlympicCookies(Request.Cookies);
+                string[] ids = cookies.GetMyCountryIds();
+
+                List<Country> mycountries = new List<Country>();
+                if (ids.Length > 0)
+                    mycountries = context.Countries.Include(t => t.Category)
+                        .Include(t => t.Game)
+                        .Where(t => ids.Contains(t.CountryID)).ToList();
+                session.SetMyCountries(mycountries);
+            }
+
+
+            var model = new OlympicsListViewModel
 			{
 				ActiveCat = activeCat,
 				ActiveGame = activeGame,
@@ -67,9 +83,12 @@ namespace TestCoreApp_Elliott.Controllers.OlympicGames
 				.FirstOrDefault();
 
 			var session = new OlympicSession(HttpContext.Session);
-			var teams = session.GetMyCountries();
-			teams.Add(data.Country);
-			session.SetMyCountries(teams);
+			var countries = session.GetMyCountries();
+			countries.Add(data.Country);
+			session.SetMyCountries(countries);
+
+			var cookies = new OlympicCookies(Response.Cookies);
+			cookies.SetMyCountryIds(countries);
 
 			TempData["message"] = $"{data.Country.Name} added to your favorites";
 
