@@ -35,7 +35,7 @@ namespace TestCoreApp_Elliott.Areas.Olympics.Models
 			session.SetString(GameKey, activeGame);
 		public string GetActiveGame() => session.GetString(GameKey);
 
-		public void RemoveMyTeams()
+		public void RemoveMyCountries()
 		{
 			session.Remove(CountryKey);
 			session.Remove(CountKey);
