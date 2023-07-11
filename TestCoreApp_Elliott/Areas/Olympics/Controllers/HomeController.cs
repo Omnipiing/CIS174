@@ -15,17 +15,20 @@ namespace TestCoreApp_Elliott.Controllers.OlympicGames
 			context = ctx;
 		}
 
-		public ViewResult Index(string activeCat = "all", string activeGame = "all")
+		public ViewResult Index(OlympicsListViewModel model)
 		{
+			model.Categories = context.Categories.ToList();
+			model.Games = context.Games.ToList();
+
 			var session = new OlympicSession(HttpContext.Session);
-			session.SetActiveCat(activeCat);
-			session.SetActiveGame(activeGame);
+			session.SetActiveCat(model.ActiveCat);
+			session.SetActiveGame(model.ActiveGame);
 
             // if no count value in session, use data in cookie to restore fave teams in session 
             int? count = session.GetMyCountryCount();
             if (count == null)
             {
-                var cookies = new OlympicCookies(Request.Cookies);
+                var cookies = new OlympicCookies(HttpContext.Request.Cookies);
                 string[] ids = cookies.GetMyCountryIds();
 
                 List<Country> mycountries = new List<Country>();
@@ -36,21 +39,12 @@ namespace TestCoreApp_Elliott.Controllers.OlympicGames
                 session.SetMyCountries(mycountries);
             }
 
-
-            var model = new OlympicsListViewModel
-			{
-				ActiveCat = activeCat,
-				ActiveGame = activeGame,
-				Categories = context.Categories.ToList(),
-				Games = context.Games.ToList(),
-			};
-
 			//get countries - filter by categories and games
 			IQueryable<Country> query = context.Countries;
-			if (activeCat != "all")
-				query = query.Where(t => t.Category.CategoryId.ToLower() == activeCat.ToLower());
-			if (activeGame != "all")
-				query = query.Where(t => t.Game.GameId.ToLower() == activeGame.ToLower());
+			if (model.ActiveCat != "all")
+				query = query.Where(t => t.Category.CategoryId.ToLower() == model.ActiveCat.ToLower());
+			if (model.ActiveGame != "all")
+				query = query.Where(t => t.Game.GameId.ToLower() == model.ActiveGame.ToLower());
 
 			//pass countries to view as model
 			model.Countries = query.ToList();
@@ -74,23 +68,23 @@ namespace TestCoreApp_Elliott.Controllers.OlympicGames
 		}
 
 		[HttpPost]
-		public RedirectToActionResult Add(CountryViewModel data)
+		public RedirectToActionResult Add(CountryViewModel model)
 		{
-			data.Country = context.Countries
+			model.Country = context.Countries
 				.Include(t => t.Category)
 				.Include(t => t.Game)
-				.Where(t => t.CountryID == data.Country.CountryID)
+				.Where(t => t.CountryID == model.Country.CountryID)
 				.FirstOrDefault();
 
 			var session = new OlympicSession(HttpContext.Session);
 			var countries = session.GetMyCountries();
-			countries.Add(data.Country);
+			countries.Add(model.Country);
 			session.SetMyCountries(countries);
 
-			var cookies = new OlympicCookies(Response.Cookies);
+			var cookies = new OlympicCookies(HttpContext.Response.Cookies);
 			cookies.SetMyCountryIds(countries);
 
-			TempData["message"] = $"{data.Country.Name} added to your favorites";
+			TempData["message"] = $"{model.Country.Name} added to your favorites";
 
 			return RedirectToAction("Index",
 				new

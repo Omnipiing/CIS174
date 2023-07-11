@@ -1,15 +1,15 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using TestCoreApp_Elliott.Areas.Olympics.Models;
 
 namespace TestCoreApp_Elliott.Models.OlympicGames
 {
 	[Area("Olympics")]
-	public class OlympicsListViewModel
+	public class OlympicsListViewModel : CountryViewModel
 	{
 		public List<Country> Countries { get; set; }
-		public string ActiveCat { get; set; }
-		public string ActiveGame { get; set; }
 
-		private List<Category> categories;
+
+        private List<Category> categories;
 		public List<Category> Categories
 		{
 			get => categories;
