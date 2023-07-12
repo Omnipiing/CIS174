@@ -1,5 +1,6 @@
 using Microsoft.EntityFrameworkCore;
 using TestCoreApp_Elliott.Models.OlympicGames;
+using TestCoreApp_Elliott.Areas.ToDoList.Models;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -12,6 +13,9 @@ builder.Services.AddControllersWithViews();
 
 builder.Services.AddDbContext<OlympicsContext>(options =>
 	options.UseSqlServer(builder.Configuration.GetConnectionString("OlympicsContext")));
+
+builder.Services.AddDbContext<ToDoContext>(options =>
+    options.UseSqlServer(builder.Configuration.GetConnectionString("ToDoContext")));
 
 var app = builder.Build();
 
