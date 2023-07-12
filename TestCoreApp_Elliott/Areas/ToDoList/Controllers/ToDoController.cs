@@ -4,10 +4,11 @@ using TestCoreApp_Elliott.Areas.ToDoList.Models;
 
 namespace TestCoreApp_Elliott.Areas.ToDoList.Controllers
 {
-    public class HomeController : Controller
+    [Area("ToDoList")]
+    public class ToDoController : Controller
     {
         private ToDoContext context;
-        public HomeController(ToDoContext ctx) => context = ctx;
+        public ToDoController(ToDoContext ctx) => context = ctx;
 
         public IActionResult Index(string id)
         {

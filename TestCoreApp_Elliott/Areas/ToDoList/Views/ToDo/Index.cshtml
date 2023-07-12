@@ -8,7 +8,7 @@
 }
 <div class="row">
     <div class="col-sm-2">
-        <form asp-area="ToDoList" asp-controller="Home" asp-action="Filter" method="post">
+        <form asp-area="ToDoList" asp-controller="ToDo" asp-action="Filter" method="post">
             <div class="form-group">
                 <label>Category:</label>
                 <select name="filter" class="form-control"
@@ -34,12 +34,12 @@
                 </select>
             </div>
             <button type="submit" class="btn btn-primary">Filter</button>
-            <a asp-area="ToDoList" asp-controller="Home" asp-action="Index" asp-route-id="" class="btn btn-primary">Clear</a>
+            <a asp-area="ToDoList" asp-controller="ToDo" asp-action="Index" asp-route-id="" class="btn btn-primary">Clear</a>
         </form>
     </div>
     <div class="col-sm-10">
 
-        <a asp-area="ToDoList" asp-controller="Home" asp-action="Add"><b>Add new task</b></a>
+        <a asp-area="ToDoList" asp-controller="ToDo" asp-action="Add"><b>Add new task</b></a>
 
         <table class="table table-bordered table-striped mt-2">
             <thead>
@@ -62,7 +62,7 @@
                     <td class="@overdue">@task.Status.Name</td>
                     <td>
                         <form asp-area="ToDoList"
-                              asp-controller="Home"
+                              asp-controller="ToDo"
                               asp-action="Edit" method="post" 
                               asp-route-id="@ViewBag.Filters.FilterString" 
                               class="mr-2">
