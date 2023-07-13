@@ -43,7 +43,7 @@ namespace TestCoreApp_Elliott.Areas.ToDoList.Controllers
             var tasks = query.OrderBy(t => t.DueDate).ToList();
             return View(tasks);
         }
-
+        
         public IActionResult Add()
         {
             ViewBag.Categories = context.Categories.ToList();
